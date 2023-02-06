@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.kokoconnect.android"
+    tools:ignore="MissingLeanbackLauncher">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="com.samsung.android.providers.context.permission.WRITE_USE_APP_FEATURE_SURVEY" />
+
+    <uses-feature
+        android:name="android.hardware.location"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.location.network"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.location.gps"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-feature
+        android:name="android.software.leanback"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.touchscreen"
+        android:required="false" />
+    <application
+        android:name="com.kokoconnect.android.AiryTvApp"
+        android:hardwareAccelerated="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:supportsRtl="true"
+        android:enabled="true"
+        android:theme="@style/Theme.New"
+        android:allowBackup="true"
+        android:fullBackupContent="@xml/backup_rules"
+        tools:replace="android:fullBackupContent"
+        tools:ignore="UnusedAttribute">
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="@string/GAM_APP_ID" />
+        <meta-data
+            android:name="com.google.android.gms.ads.AD_MANAGER_APP"
+            android:value="true" />
+        <meta-data
+            android:name="com.google.android.gms.cast.framework.OPTIONS_PROVIDER_CLASS_NAME"
+            android:value="com.airytv.android.model.player.proxy.chromecast.CastOptionsProvider" />
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@mipmap/ic_launcher" />
+
+        <activity
+            android:name="io.presage.mraid.browser.ShortcutActivity"
+            android:exported="true"
+            />
+
+        <service android:name="com.kokoconnect.android.service.MessageReceiver"
+            android:enabled="true"
+            tools:node="merge"
+            android:exported="true"
+            >
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service
+            android:name="com.kokoconnect.android.service.AmsService"
+            tools:node="merge"
+            android:exported="true"
+            />
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+
+            tools:node="merge"
+            android:exported="false"
+
+            android:required="false" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            tools:node="merge"
+
+            android:exported="false"
+
+
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths"/>
+        </provider>
+
+        <activity
+            tools:node="merge"
+            android:exported="true"
+
+            android:name="com.kokoconnect.android.ui.activity.UserAlertActivity"
+            android:screenOrientation="portrait"
+
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+
+        <activity
+            android:name="com.kokoconnect.android.ui.activity.MainActivity"
+            android:hardwareAccelerated="true"
+            tools:node="merge"
+            android:exported="true"
+
+            android:resizeableActivity="true"
+            android:configChanges="orientation|keyboardHidden|screenSize|screenLayout"
+            android:theme="@style/Theme.Launcher">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE"
+                    />
+                <data
+                    android:host="airytv.page.link"
+                    android:scheme="https" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            tools:node="merge"
+            android:exported="true"
+
+            android:name="com.kokoconnect.android.ui.activity.WebViewActivity"
+            android:resizeableActivity="false"
+
+            android:theme="@style/Theme.AppCompat" />
+
+        <activity
+            tools:node="merge"
+            android:exported="true"
+
+            android:name="com.bfio.ad.BFIOActivity"
+
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+
+        <activity
+            tools:node="merge"
+            android:exported="true"
+
+            android:name="com.google.android.gms.ads.AdActivity"
+            tools:replace="android:exported"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+            android:theme="@android:style/Theme.Translucent" /> <!-- <activity
+            tools:node="merge"
+            android:exported="true"
+ -->
+
+        <activity
+            tools:node="merge"
+            android:exported="true"
+
+            android:name="com.facebook.FacebookActivity"
+
+
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="@string/app_name" />
+
+        <activity
+            tools:node="merge"
+            android:exported="true"
+
+            android:name="com.facebook.CustomTabActivity"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="@string/fb_login_protocol_scheme" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            tools:node="merge"
+            android:exported="true"
+
+            android:name="com.kokoconnect.android.ui.activity.InterstitialPlaceholderActivity"
+
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+
+        <activity
+            tools:node="merge"
+            android:exported="true"
+
+            android:name="com.tapjoy.TJAdUnitActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:hardwareAccelerated="true"
+
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
+
+        <activity
+            tools:node="merge"
+            android:exported="true"
+
+            android:name="com.tapjoy.TJContentActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:hardwareAccelerated="true"
+
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+    </application>
+</manifest>

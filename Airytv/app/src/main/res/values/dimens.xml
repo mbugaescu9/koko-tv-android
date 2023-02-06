@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="description_toolbar_height">53dp</dimen>
+    <dimen name="description_content_height">80dp</dimen>
+    <dimen name="margin_description">10dp</dimen>
+    <dimen name="guide_item_program_num_width">23dp</dimen>
+    <dimen name="category_text_size">16sp</dimen>
+    <dimen name="rating_star_size">48dp</dimen>
+</resources>

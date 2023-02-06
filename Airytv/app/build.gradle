@@ -1,0 +1,700 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.google.firebase.crashlytics'
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+import org.w3c.dom.Element
+import org.w3c.dom.Node
+
+import javax.xml.transform.dom.DOMSource
+import javax.xml.transform.stream.StreamResult
+import javax.xml.transform.TransformerFactory
+import javax.xml.transform.Transformer
+
+
+def addAndroidExportedIfNecessary(File manifestFile) {
+    def manifestAltered = false
+    def reader = manifestFile.newReader()
+    def document = groovy.xml.DOMBuilder.parse(reader)
+    def application = document.getElementsByTagName("application").item(0)
+    if (application != null) {
+        println "Searching for activities, services and receivers with intent filters..."
+        application.childNodes.each { child ->
+            def childNodeName = child.nodeName
+            if (childNodeName == "activity" || childNodeName == "activity-alias" ||
+                    childNodeName == "service" || childNodeName == "receiver") {
+                def attributes = child.getAttributes()
+                if (attributes.getNamedItem("android:exported") == null) {
+                    def intentFilters = child.childNodes.findAll {
+                        it.nodeName == "intent-filter"
+                    }
+                    if (intentFilters.size() > 0) {
+                        println "found ${childNodeName} ${attributes.getNamedItem("android:name").nodeValue} " +
+                                "with intent filters but without android:exported attribute"
+
+                        def exportedAttrAdded = false
+                        for (def i = 0; i < intentFilters.size(); i++) {
+                            def intentFilter = intentFilters[i]
+                            def actions = intentFilter.childNodes.findAll {
+                                it.nodeName == "action"
+                            }
+                            for (def j = 0; j < actions.size(); j++) {
+                                def action = actions[j]
+                                def actionName = action.getAttributes().getNamedItem("android:name").nodeValue
+                                if (actionName == "com.google.firebase.MESSAGING_EVENT") {
+                                    println "adding exported=false to ${attributes.getNamedItem("android:name")}..."
+                                    ((Element) child).setAttribute("android:exported", "false")
+                                    manifestAltered = true
+                                    exportedAttrAdded = true
+                                }
+                            }
+                        }
+                        if (!exportedAttrAdded) {
+                            println "adding exported=true to ${attributes.getNamedItem("android:name")}..."
+                            ((Element) child).setAttribute("android:exported", "true")
+                            manifestAltered = true
+                        }
+                    }
+                }
+            }
+        }
+    }
+    if (manifestAltered) {
+        document.setXmlStandalone(true)
+        Transformer transformer = TransformerFactory.newInstance().newTransformer()
+        DOMSource source = new DOMSource(document)
+        FileWriter writer = new FileWriter(manifestFile)
+        StreamResult result = new StreamResult(writer)
+        transformer.transform(source, result)
+        println "Done adding missing android:exported attributes to your AndroidManifest.xml. You may want to" +
+                "additionally prettify it in Android Studio using [command + option + L](mac) or [CTRL+ALT+L](windows)."
+    } else {
+        println "Hooray, your AndroidManifest.xml did not need any change."
+    }
+}
+
+/**
+ * Given an AndroidManifest.xml file, extract components with missing `android:exported` attribute, also add that
+ * attribute to those components.
+ */
+def getMissingAndroidExportedComponents(File manifestFile) {
+    List<Node> nodesFromDependencies = new ArrayList<>()
+    def reader = manifestFile.newReader()
+    def document = groovy.xml.DOMBuilder.parse(reader)
+    def application = document.getElementsByTagName("application").item(0)
+    if (application != null) {
+        println "Searching for activities, services and receivers with intent filters..."
+        application.childNodes.each { child ->
+            def childNodeName = child.nodeName
+            if (childNodeName == "activity" || childNodeName == "activity-alias" ||
+                    childNodeName == "service" || childNodeName == "receiver") {
+                def attributes = child.getAttributes()
+                if (attributes.getNamedItem("android:exported") == null) {
+                    def intentFilters = child.childNodes.findAll {
+                        it.nodeName == "intent-filter"
+                    }
+                    if (intentFilters.size() > 0) {
+                        println "found ${childNodeName} ${attributes.getNamedItem("android:name").nodeValue} " +
+                                "with intent filters but without android:exported attribute"
+
+                        def exportedAttrAdded = false
+                        for (def i = 0; i < intentFilters.size(); i++) {
+                            def intentFilter = intentFilters[i]
+                            def actions = intentFilter.childNodes.findAll {
+                                it.nodeName == "action"
+                            }
+                            for (def j = 0; j < actions.size(); j++) {
+                                def action = actions[j]
+                                def actionName = action.getAttributes().getNamedItem("android:name").nodeValue
+                                if (actionName == "com.google.firebase.MESSAGING_EVENT") {
+                                    println "adding exported=false to ${attributes.getNamedItem("android:name")}..."
+                                    ((Element) child).setAttribute("android:exported", "false")
+                                    exportedAttrAdded = true
+                                }
+                            }
+                        }
+                        if (!exportedAttrAdded) {
+                            println "adding exported=true to ${attributes.getNamedItem("android:name")}..."
+                            ((Element) child).setAttribute("android:exported", "true")
+                        }
+                        nodesFromDependencies.add(child)
+                    }
+                }
+            }
+        }
+    }
+    return nodesFromDependencies
+}
+
+/**
+ * Add [components] to the given an AndroidManifest.xml file's <application> component
+ */
+def addManifestFileComponents(File manifestFile, List<Node> components) {
+    def reader = manifestFile.newReader()
+    def document = groovy.xml.DOMBuilder.parse(reader)
+    def application = document.getElementsByTagName("application").item(0)
+    if (application != null) {
+        println "Adding missing components with android:exported attribute to ${manifestFile.absolutePath} ..."
+        components.each { node ->
+            Node importedNode = document.importNode(node, true)
+            application.appendChild(importedNode)
+        }
+    }
+    if (components.size() > 0) {
+        document.setXmlStandalone(true)
+        Transformer transformer = TransformerFactory.newInstance().newTransformer()
+        DOMSource source = new DOMSource(document)
+        FileWriter writer = new FileWriter(manifestFile)
+        StreamResult result = new StreamResult(writer)
+        transformer.transform(source, result)
+        println "Added missing app-dependencies components with android:exported attributes to your " +
+                "AndroidManifest.xml.You may want to additionally prettify it in Android Studio using " +
+                "[command + option + L](mac) or [CTRL+ALT+L](windows)."
+    }
+    println "----"
+}
+
+task doAddAndroidExportedIfNecessary {
+    doLast {
+        def root = new File(project.rootDir, "")
+        if (root.isDirectory()) {
+            def children = root.listFiles()
+            for (def i = 0; i < children.size(); i++) {
+                File child = children[i]
+                if (child.isDirectory()) {
+                    File srcDirectory = new File(child, "src")
+                    if (srcDirectory.exists() && srcDirectory.isDirectory()) {
+                        def srcChildren = srcDirectory.listFiles()
+                        for (def j = 0; j < srcChildren.size(); j++) {
+                            File manifestFile = new File(srcChildren[j], "AndroidManifest.xml")
+                            if (manifestFile.exists() && manifestFile.isFile()) {
+                                println "found manifest file: ${manifestFile.absolutePath}"
+                                addAndroidExportedIfNecessary(manifestFile)
+                                println "-----"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/**
+ * If your project has dependency on libraries that haven't updated their AndroidManifest.xml files yet to conform to
+ * the Android 12 requirement, your app may still fail to build due to missing `android:exported` attributes in those
+ * libraries' AndroidManifest.xml files, even after running the [doAddAndroidExportedIfNecessary] task. This task
+ * extracts the components that are missing the `android:exported` attribute from the merged manifest, which includes
+ * components from imported libraries, then adds the components to the project's AndroidManifest.xml files that contains
+ * <application> component. The added components should override their declaration in the libraries' manifest files.
+ * As we cannot modify the libraries' manifest files, this should be an acceptable workaround.
+ *
+ * NOTE: always run [doAddAndroidExportedIfNecessary] first before running this task, in order to avoid adding duplicate
+ * components to the project's AndroidManifest.xml files. After [doAddAndroidExportedIfNecessary] finishes, rebuild your
+ * project, otherwise the merged manifest won't be created. Only after those steps, execute this task.
+ *
+ * NOTE: This task assumes certain structure of the path to the merged manifest, which is created after project
+ * build. The path structure may be dependent on the gradle version. This task was tested with gradle-6.8 and
+ * Android Studio Arctic Fox.
+ *
+ * NOTE: If your project already targets Android 12 and still contains libraries with missing `android:exported`
+ * attributes for required components in their AndroidManifest.xml files, your build will fail and the merged manifest
+ * won't be created. Therefore, call this task before you target Android 12; or:
+ *  - temporarily downgrade the targetSdkVersion (and compileSDKVersion) to 30
+ *  - run [doAddAndroidExportedIfNecessary] task
+ *  - rebuild your project (to build the merged manifest)
+ *  - run this task
+ *  - set the targetSdkVersion back to target Android 12
+ */
+task doAddAndroidExportedForDependencies {
+    doLast {
+        List<Node> missingComponents = new ArrayList<>()
+        def root = new File(project.rootDir, "")
+        if (root.isDirectory()) {
+            def children = root.listFiles()
+            for (def i = 0; i < children.size(); i++) {
+                File child = children[i]
+                if (child.isDirectory()) {
+                    File mergedManifestsDirectory = new File(child, "build/intermediates/merged_manifests")
+                    if (mergedManifestsDirectory.exists() && mergedManifestsDirectory.isDirectory()) {
+                        def manifestFiles = mergedManifestsDirectory.listFiles().findAll { directoryChild ->
+                            directoryChild.isDirectory() &&
+                                    (new File(directoryChild, "AndroidManifest.xml")).exists()
+                        }.stream().map { directoryWithManifest ->
+                            new File(directoryWithManifest, "AndroidManifest.xml")
+                        }.toArray()
+
+                        if (manifestFiles.size() > 0) {
+                            File mergedManifest = manifestFiles[0]
+                            if (mergedManifest.exists() && mergedManifest.isFile()) {
+                                missingComponents = getMissingAndroidExportedComponents(mergedManifest)
+
+                                if (missingComponents.size() > 0) {
+                                    File srcDirectory = new File(child, "src")
+                                    if (srcDirectory.exists() && srcDirectory.isDirectory()) {
+                                        def srcChildren = srcDirectory.listFiles()
+                                        for (def j = 0; j < srcChildren.size(); j++) {
+                                            File manifestFile = new File(srcChildren[j], "AndroidManifest.xml")
+                                            if (manifestFile.exists() && manifestFile.isFile()) {
+                                                addManifestFileComponents(manifestFile, missingComponents)
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//configurations.all {
+//    resolutionStrategy {
+//        eachDependency { DependencyResolveDetails details ->
+//            if (details.requested.group == 'androidx.appcompat') {
+//                details.useVersion "1.2.0"
+//            }
+//        }
+//    }
+//}
+
+allprojects {
+    repositories {
+        mavenCentral()
+
+        google()
+        maven {
+            url 'https://jitpack.io'
+           allowInsecureProtocol = true
+        }
+        maven {
+            url "https://dl.bintray.com/kotlin/kotlin-dev"
+            allowInsecureProtocol = true
+        }
+        maven {
+            url 'https://maven.fabric.io/public'
+            allowInsecureProtocol = true
+        }
+        maven {
+            url "https://chartboostmobile.bintray.com/Chartboost"
+            allowInsecureProtocol = true
+        }
+        maven {
+            url "https://adcolony.bintray.com/AdColony"
+            allowInsecureProtocol = true
+        }
+//        maven {
+//            url "https://cdn01.static.adfalcon.com/sdk/android/maven"
+//            allowInsecureProtocol = true
+//        }
+        maven {
+            url 'https://fyber.bintray.com/marketplace'
+            allowInsecureProtocol = true
+        }
+        maven {
+            url "https://imobile.github.io/adnw-sdk-android"
+            allowInsecureProtocol = true
+        }
+        maven {
+            url 'https://dl.bintray.com/ironsource-mobile/android-sdk'
+            allowInsecureProtocol = true
+        }
+        maven {
+            url "https://imobile-maio.github.io/maven"
+            allowInsecureProtocol = true
+        }
+        maven {
+            url 'http://fan-adn.github.io/nendSDK-Android-lib/library'
+            allowInsecureProtocol = true
+        }
+        maven {
+            url 'https://github.com/zucks/ZucksAdNetworkSDK-Maven/raw/master/'
+            allowInsecureProtocol = true
+        }
+        maven {
+            name "Tapjoy's maven repo"
+            url "https://tapjoy.bintray.com/maven"
+            allowInsecureProtocol = true
+        }
+        maven {
+            url "https://adcolony.bintray.com/AdColony"
+            allowInsecureProtocol = true
+        }
+        maven {
+            url "https://sdk.tapjoy.com/"
+            allowInsecureProtocol = true
+        }
+        maven {
+            url 'https://android-sdk.is.com/'
+            allowInsecureProtocol = true
+        }
+        maven {
+            url 'https://fan-adn.github.io/nendSDK-Android-lib/library'
+            allowInsecureProtocol = true
+        }
+        maven { url "https://maven.google.com" }
+//    maven {
+//        url "https://chartboostmobile.bintray.com/Chartboost"
+//    }
+        flatDir {
+            dirs 'libs'
+        }
+    }
+}
+
+android {
+    compileSdkVersion 33
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 33
+        versionCode 3
+        versionName "1.0"
+        multiDexEnabled true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        flavorDimensions "version"
+        vectorDrawables.useSupportLibrary = true
+
+        buildConfigField 'String', 'GOOGLE_WEB_CLIENTE_ID', '"166389273154-lqo84u4pe0i6eojjfuco7643fdncoc9c.apps.googleusercontent.com"'
+
+        lintOptions {
+            checkReleaseBuilds false
+            // Or, if you prefer, you can continue to check for errors in release builds,
+            // but continue the build even when errors are found:
+            abortOnError false
+        }
+        productFlavors {
+            gpsReleaseServer {
+                dimension "version"
+                applicationId "com.kokoconnect.android"
+                versionNameSuffix "gcR"
+                buildConfigField "boolean", "IS_RELEASE_SERVER", "true"
+                buildConfigField "String", "SERVER_API_URL", '"https://api.kokoconnect.tv/"'
+                buildConfigField "String", "SERVER_AMS_EVENTS_URL", '"https://apiams.airy.tv/"'
+                buildConfigField 'String', "APP_STORE_URL", '"https://play.google.com/store/apps/details?id=com.freeairytv.android"'
+                buildConfigField 'String', 'PLATFORM', '"android"'
+                buildConfigField 'String', 'AD_PLATFORM', '"android"'
+                buildConfigField 'String', 'AMS_PLATFORM', '"android_gps"'
+                resValue "string", "GAM_APP_ID", '"ca-app-pub-1776754790536003~7686929852"'
+            }
+            gpsDemoServer {
+                dimension "version"
+//                applicationId "com.woohootv.android" // todo woohootv
+//                applicationId "com.freeairytv.androidtv" // todo android tv
+                applicationId "com.kokoconnect.android"
+                versionNameSuffix "gcD"
+                buildConfigField "boolean", "IS_RELEASE_SERVER", "false"
+                buildConfigField "String", "SERVER_API_URL", '"http://api.kokoconnect.tv/"'
+//                buildConfigField "String", "SERVER_API_URL", '"https://api.demo.showfer.com/"'
+//                buildConfigField "String", "SERVER_AMS_EVENTS_URL", '"https://apiams.demo.showfer.com/"'
+                buildConfigField "String", "SERVER_AMS_EVENTS_URL", '"https://api.kokoconnect.tv/"'
+                buildConfigField 'String', "APP_STORE_URL", '"https://play.google.com/store/apps/details?id=com.freeairytv.android"'
+                buildConfigField 'String', 'PLATFORM', '"android"'
+                buildConfigField 'String', 'AD_PLATFORM', '"android"'
+                buildConfigField 'String', 'AMS_PLATFORM', '"android_gps"'
+                resValue "string", "GAM_APP_ID", '"ca-app-pub-1776754790536003~7686929852"'
+            }
+            nonGpsReleaseServer {
+                dimension "version"
+                applicationId "com.kokoconnect.android" // for samsung store use old app id.
+                versionNameSuffix "ngcR"
+                buildConfigField "boolean", "IS_RELEASE_SERVER", "true"
+                buildConfigField "String", "SERVER_API_URL", '"https://api.kokoconnect.tv/"'
+                buildConfigField "String", "SERVER_AMS_EVENTS_URL", '"https://apiams.airy.tv/"'
+                buildConfigField 'String', "APP_STORE_URL", '"https://play.google.com/store/apps/details?id=com.freeairytv.android"'
+                buildConfigField 'String', 'PLATFORM', '"android_non_gps"'
+                buildConfigField 'String', 'AD_PLATFORM', '"android/non_gps"'
+                buildConfigField 'String', 'AMS_PLATFORM', '"android_non_gps"'
+                resValue "string", "GAM_APP_ID", '"ca-app-pub-1776754790536003~7686929852"'
+            }
+            nonGpsDemoServer {
+                dimension "version"
+                applicationId "com.kokoconnect.android" // for samsung store use old app id.
+                versionNameSuffix "ngcD"
+                buildConfigField "boolean", "IS_RELEASE_SERVER", "false"
+//                buildConfigField "String", "SERVER_API_URL", '"https://api.demo.showfer.com/"'
+                buildConfigField "String", "SERVER_API_URL", '"http://api.kokoconnect.tv/"'
+//                buildConfigField "String", "SERVER_AMS_EVENTS_URL", '"https://apiams.demo.showfer.com/"'
+                buildConfigField "String", "SERVER_AMS_EVENTS_URL", '"https://apiams.airy.tv/"'
+                buildConfigField 'String', "APP_STORE_URL", '"https://play.google.com/store/apps/details?id=com.freeairytv.android"'
+                buildConfigField 'String', 'PLATFORM', '"android_non_gps"'
+                buildConfigField 'String', 'AD_PLATFORM', '"android/non_gps"'
+                buildConfigField 'String', 'AMS_PLATFORM', '"android_non_gps"'
+                resValue "string", "GAM_APP_ID", '"ca-app-pub-1776754790536003~7686929852"'
+            }
+            amazonReleaseServer {
+                dimension "version"
+                applicationId "com.kokoconnect.android"
+                versionNameSuffix "asR"
+                buildConfigField "boolean", "IS_RELEASE_SERVER", "true"
+                buildConfigField "String", "SERVER_API_URL", '"https://api.kokoconnect.tv/"'
+                buildConfigField "String", "SERVER_AMS_EVENTS_URL", '"https://apiams.airy.tv/"'
+                buildConfigField 'String', "APP_STORE_URL", '"https://www.amazon.com/Airy-Free-Movie-Streaming-Forever/dp/B081S8THFF"'
+                buildConfigField 'String', 'PLATFORM', '"amazon"'
+                buildConfigField 'String', 'AD_PLATFORM', '"amazon"'
+                buildConfigField 'String', 'AMS_PLATFORM', '"amazon"'
+                resValue "string", "GAM_APP_ID", '"ca-app-pub-1776754790536003~7686929852"'
+            }
+
+            amazonDemoServer {
+                dimension "version"
+                applicationId "com.kokoconnect.android"
+                versionNameSuffix "asD"
+                buildConfigField "boolean", "IS_RELEASE_SERVER", "false"
+//                buildConfigField "String", "SERVER_API_URL", '"https://api.demo.showfer.com/"'
+                buildConfigField "String", "SERVER_API_URL", '"http://api.kokoconnect.tv/"'
+//                buildConfigField "String", "SERVER_AMS_EVENTS_URL", '"https://apiams.demo.showfer.com/"'
+                buildConfigField "String", "SERVER_AMS_EVENTS_URL", '"https://apiams.airy.tv/"'
+                buildConfigField 'String', "APP_STORE_URL", '"https://www.amazon.com/Airy-Free-Movie-Streaming-Forever/dp/B081S8THFF"'
+                buildConfigField 'String', 'PLATFORM', '"amazon"'
+                buildConfigField 'String', 'AD_PLATFORM', '"amazon"'
+                buildConfigField 'String', 'AMS_PLATFORM', '"amazon"'
+                resValue "string", "GAM_APP_ID", '"ca-app-pub-1776754790536003~7686929852"'
+            }
+        }
+    }
+    kotlinOptions{
+        freeCompilerArgs += [
+                "-Xjvm-default=all",
+        ]
+    }
+    android.applicationVariants.all { variant ->
+        variant.outputs.all { output ->
+            outputFileName =
+                    "airytv${variant.versionName.replace('.', '')}.apk"
+        }
+    }
+    signingConfigs {
+        debug {
+            storeFile file("../debug.keystore")
+            storePassword "android"
+            keyAlias "AndroidDebugKey"
+            keyPassword "android"
+        }
+        release {
+            storeFile file("../dev_keystore.jks")
+            storePassword "showfer"
+            keyAlias "key0"
+            keyPassword "showfer"
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+        debug {
+            signingConfig signingConfigs.debug
+        }
+    }
+    buildFeatures {
+        viewBinding = true
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+//    def anko_version = "0.10.8"
+//    anko_version = '0.10.8'
+    /** Base **/
+    implementation 'androidx.multidex:multidex:2.0.1'
+//    implementation fileTree(include: ['*.jar', '*.aar'], exclude: 'test_aar*', dir: 'libs')
+    implementation 'androidx.appcompat:appcompat:1.4.1'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
+    implementation 'androidx.viewpager2:viewpager2:1.1.0-beta01'
+    implementation 'androidx.paging:paging-runtime-ktx:3.1.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation "androidx.fragment:fragment-ktx:1.5.4"
+    implementation "androidx.activity:activity-ktx:1.7.0-alpha02"
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.5.3'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.5.3'
+    implementation "androidx.exifinterface:exifinterface:1.3.5"
+    // chromecast
+    implementation 'androidx.mediarouter:mediarouter:1.3.1'
+
+    implementation 'com.google.android.material:material:1.6.0'
+    implementation 'androidx.core:core-ktx:1.8.0'
+    implementation "androidx.work:work-runtime-ktx:2.7.1"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.1'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.1'
+
+    /** Utils **/
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-scalars:2.9.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.2'
+
+    implementation 'me.zhanghai.android.materialprogressbar:library:1.6.1'
+    implementation 'com.jakewharton.timber:timber:5.0.1'
+    implementation group: 'fr.turri', name: 'jISO8601', version: '0.2'
+    implementation files('libs/io-android-sdk-v4.4.jar')
+    //implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:core:11.1.0'
+    // Glide
+    implementation 'com.github.bumptech.glide:glide:4.12.0'
+    implementation 'jp.wasabeef:glide-transformations:4.3.0'
+
+    implementation group: 'fr.turri', name: 'jISO8601', version: '0.2'
+    implementation group: 'org.ocpsoft.prettytime', name: 'prettytime', version: '4.0.2.Final'
+    //implementation 'net.cachapa.expandablelayout:expandablelayout:2.9.2'
+    implementation 'com.github.cachapa:ExpandableLayout:2.9.2'
+    implementation 'joda-time:joda-time:2.10.10'
+    implementation 'me.relex:circleindicator:2.1.6'
+    // anko
+    implementation "org.jetbrains.anko:anko:$anko_version"
+//    implementation "org.jetbrains.anko:anko-commons:$anko_version"
+//    implementation "org.jetbrains.anko:anko-appcompat-v7:$anko_version"
+////    implementation "org.jetbrains.anko:anko-appcompat-v7:$anko_version"
+//    implementation "org.jetbrains.anko:anko-appcompat-v7-coroutines:$anko_version"
+//    // sdk15, sdk19, sdk21, sdk23 are also available
+//    implementation "org.jetbrains.anko:anko-sdk25:$anko_version"
+//    implementation "org.jetbrains.anko:anko-sdk25-coroutines:$anko_version"
+    // Social auth
+    implementation 'com.facebook.android:facebook-android-sdk:8.1.0'
+    implementation 'com.facebook.android:facebook-login:8.1.0'
+
+    implementation deps.lifecycle.runtime_ktx
+    implementation deps.lifecycle.viewmodel_ktx
+    implementation deps.lifecycle.livedata_ktx
+    implementation deps.lifecycle.java8
+    implementation deps.lifecycle.process
+
+    implementation deps.dagger.runtime
+    implementation deps.dagger.android
+    implementation deps.dagger.android_support
+    //for using adapters with presenters
+    implementation deps.support.leanback
+    // players
+    implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:core:10.0.5'
+//    implementation 'com.dailymotion.dailymotion-sdk-android:sdk:0.2.12'
+    implementation 'com.dailymotion.dailymotion-sdk-android:sdk:0.2.10'
+
+    /** Exoplayer custom **/
+    implementation project(':library-core')
+    implementation project(':library-hls')
+    implementation project(':library-ui')
+    implementation project(':extension-ima')
+
+    /** Independent ads SDKs **/
+    //ima sdk
+    implementation 'com.google.ads.interactivemedia.v3:interactivemedia:3.29.0'
+    // admob
+    implementation 'com.google.android.gms:play-services-ads:21.3.0'
+    implementation 'com.google.android.gms:play-services-ads-identifier:18.0.1'
+    implementation 'com.google.android.ads:mediation-test-suite:3.0.0' // only for test
+    // ogury sdk
+    implementation(name: 'ogury-4.3.7', ext: 'aar')
+    // tapjoy
+   implementation 'com.tapjoy:tapjoy-android-sdk:12.7.0@aar'
+   // api 'com.tapjoy:tapjoy-android-sdk:12.11.0.0'
+
+    /** Mediation ads SDKs **/
+    // AdColony
+    implementation 'com.google.ads.mediation:adcolony:4.8.0.0'
+    // AdFalcon
+    // AdFalcon
+   // implementation 'com.noqoush.adfalcon.android.sdk:adfalcon-sdk:4+'
+    //implementation 'com.noqoush.adfalcon.android.sdk:adfalcon-sdk:5.2.1'
+ //   implementation 'com.google.ads.mediation.adfalcon:admob-mediation-adapter:2+'
+  //  implementation 'com.google.ads.mediation.adfalcon:admob-mediation-adapter:2.1.1'
+
+
+
+    // Applovin
+    implementation 'com.google.ads.mediation:applovin:11.5.4.0'
+    // Chartboost
+//    implementation 'com.google.ads.mediation:chartboost:9.1.1.0'
+    implementation 'com.google.ads.mediation:chartboost:8.4.3.1'
+    // Facebook
+    implementation 'com.google.ads.mediation:facebook:6.12.0.0'
+    // Fyber
+    implementation 'com.google.ads.mediation:fyber:8.2.0.0'
+    // I-mobile
+    implementation 'com.google.ads.mediation:imobile:2.0.23.0'
+    // InMobi
+    implementation 'com.google.ads.mediation:inmobi:10.1.1.0'
+    // IronSource
+    implementation 'com.google.ads.mediation:ironsource:7.2.5.0'
+    // maio
+    implementation 'com.google.ads.mediation:maio:1.1.16.0'
+    // MoPub
+    implementation('com.google.ads.mediation:mopub:5.18.0.0') {
+        exclude group: "com.google.android.exoplayer"
+    }
+    // MyTarget
+    implementation('com.google.ads.mediation:mytarget:5.16.0.0') {
+        exclude group: "com.google.android.exoplayer"
+    }
+    // nend
+    implementation 'com.google.ads.mediation:nend:9.0.0.0'
+    // Unity Ads
+    implementation 'com.google.ads.mediation:unity:4.4.1.0'
+    // Vungle
+    implementation 'com.google.ads.mediation:vungle:6.12.0.0'
+    // Zucks
+    implementation 'net.zucks:zucks-ad-network-sdk:4.6.0'
+    implementation 'net.zucks:zucks-ad-network-admob-adapter:1.3.1'
+    // prebid (for theadshop)
+//    implementation files('libs/prebid-mobile-sdk-1.12.jar')
+    implementation 'org.prebid:prebid-mobile-sdk:1.12'
+
+    /** Firebase **/
+    implementation platform('com.google.firebase:firebase-bom:31.1.0')
+    implementation 'com.google.firebase:firebase-crashlytics-ktx'
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+    implementation 'com.google.firebase:firebase-messaging-ktx'
+    implementation 'com.google.firebase:firebase-dynamic-links-ktx'
+
+    /** GPS **/
+    implementation 'com.google.android.gms:play-services-plus:17.0.0'
+    implementation 'com.google.android.gms:play-services-basement:18.1.0'
+    implementation 'com.google.android.gms:play-services-location:21.0.1'
+    implementation 'com.google.android.gms:play-services-base:18.1.0'
+    implementation 'com.google.android.gms:play-services-auth:20.4.0'
+    implementation 'com.google.android.gms:play-services-cast-framework:21.2.0'
+    implementation 'com.google.gms:google-services:4.3.14'
+
+    kapt deps.dagger.android_support_compiler
+    kapt deps.dagger.compiler
+    kapt deps.lifecycle.compiler
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.5.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
+}

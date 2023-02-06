@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootPopupLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="false"
+    android:focusable="false">
+
+    <View
+        android:id="@+id/clickInterceptor"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible" />
+
+    <ProgressBar
+        android:id="@+id/pbBuffering"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        />
+
+    <RelativeLayout
+        android:id="@+id/containerControls"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:layout_gravity="top"
+        android:background="?attr/colorSurfaceVariant5">
+
+        <ImageView
+            android:id="@+id/btnRefresh"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="4dp"
+            android:layout_alignParentStart="true"
+            android:background="?android:attr/selectableItemBackground"
+            android:cropToPadding="true"
+            android:padding="4dp"
+            android:scaleType="fitCenter"
+            app:tint="?attr/colorOnSurfaceVariant9"
+            app:srcCompat="@drawable/ic_refresh" />
+
+
+        <ImageView
+            android:id="@+id/btnStartScreencast"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_toEndOf="@id/btnRefresh"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="12dp"
+            android:cropToPadding="true"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="6dp"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/drawable_screencast"
+            app:tint="?attr/colorOnSurfaceVariant9"
+            android:background="@android:color/transparent"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/btnSubtitles"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginEnd="4dp"
+            android:layout_toStartOf="@id/btnMute"
+            android:padding="4dp"
+            android:visibility="gone"
+            app:srcCompat="@drawable/ic_closed_capture"
+            app:tint="?attr/colorOnSurfaceVariant9"
+            android:background="@android:color/transparent"  />
+
+        <ImageView
+            android:id="@+id/btnMute"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginEnd="4dp"
+            android:layout_toStartOf="@id/btnFullscreen"
+            android:padding="4dp"
+            app:srcCompat="@drawable/ic_volume_off_black_24dp"
+            app:tint="?attr/colorOnSurfaceVariant9"
+            android:background="@android:color/transparent" />
+
+        <ImageView
+            android:id="@+id/btnFullscreen"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="4dp"
+            android:cropToPadding="true"
+            android:clickable="true"
+            android:focusable="true"
+            android:scaleType="centerCrop"
+            android:padding="2dp"
+            app:srcCompat="@drawable/ic_fullscreen_black_24dp"
+            app:tint="?attr/colorOnSurfaceVariant9"
+            android:background="@android:color/transparent" />
+
+    </RelativeLayout>
+</FrameLayout>

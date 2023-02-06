@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:padding="8dp"
+    android:id="@+id/rootLayout"
+    android:clickable="true"
+    android:focusable="true"
+    android:background="?attr/selectableItemBackground">
+
+    <ImageView
+        android:id="@+id/ivPoster"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:minWidth="100dp"
+        android:layout_weight="1"
+        android:layout_gravity="center_horizontal"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
+        app:srcCompat="@drawable/ic_poster_horizontal_placeholder"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="6dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvEpisodeNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:gravity="start"
+            android:fontFamily="@font/roboto_condensed_regular"
+            android:textSize="13sp"
+            android:textColor="@color/white"
+            android:text=""
+            />
+        <TextView
+            android:id="@+id/tvEpisodeDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:gravity="start"
+            android:fontFamily="@font/roboto_condensed_regular"
+            android:textSize="12sp"
+            android:textColor="@color/silverChalice"
+            android:text=""
+            />
+        <TextView
+            android:id="@+id/tvEpisodeName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="2"
+            android:lines="2"
+            android:ellipsize="end"
+            android:gravity="start"
+            android:fontFamily="@font/roboto_condensed_regular"
+            android:textSize="13sp"
+            android:textColor="@color/white"
+            android:text=""
+            />
+
+
+    </LinearLayout>
+</LinearLayout>

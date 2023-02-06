@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <base-config cleartextTrafficPermitted="true">
+        <trust-anchors>
+            <certificates src="system"/>
+            <certificates src="user"/>
+            <certificates src="@raw/cert_tikilive"/>
+        </trust-anchors>
+    </base-config>
+    <domain-config cleartextTrafficPermitted="false">
+        <domain includeSubdomains="true">example.com</domain>
+        <domain includeSubdomains="true">cdn.example2.com</domain>
+    </domain-config>
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">bfmio.com</domain>
+        <domain includeSubdomains="true">tulix.tv</domain>
+        <domain includeSubdomains="true">tikilive.com</domain>
+        <!-- 127.0.0.1 enabled for facebook audience network sdk (ads caching) -->
+        <domain includeSubdomains="true">127.0.0.1</domain>
+    </domain-config>
+</network-security-config>

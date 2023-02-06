@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorSurfaceVariant4"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/messageText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:textColor="?attr/colorOnSurfaceVariant9"
+            android:textSize="18sp"
+            android:text=""/>
+
+        <TextView
+            android:id="@+id/messageAdditionalText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:textColor="?attr/colorOnSurfaceVariant2"
+            android:textSize="16sp"
+            android:visibility="gone"/>
+
+        <Button
+            android:id="@+id/messageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="8dp"
+            android:backgroundTint="?attr/colorSurfaceVariant7"
+            android:ellipsize="end"
+            android:textColor="?attr/colorOnSurfaceVariant3"
+            android:text=""/>
+    </LinearLayout>
+</FrameLayout>

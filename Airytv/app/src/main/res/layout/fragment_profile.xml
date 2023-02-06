@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorSurfaceVariant5">
+
+    <FrameLayout
+        android:id="@+id/flShadowContainer"
+        android:layout_width="1060dp"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.55"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <FrameLayout
+            android:layout_width="1060dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal|bottom"
+            android:background="@drawable/shape_profile_round_shadow_background"
+            android:backgroundTint="?attr/colorOnSurfaceVariant5">
+
+        </FrameLayout>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/flProfileDataBackground"
+        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHeight_percent="0.6"
+        app:layout_constraintStart_toStartOf="parent">
+
+    </FrameLayout>
+
+    <ScrollView
+        android:id="@+id/svProfileData"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHeight_percent="0.64"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clProfileData"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!--            <LinearLayout-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginTop="20dp"-->
+            <!--                android:paddingHorizontal="8dp"-->
+            <!--                android:paddingTop="4dp"-->
+            <!--                android:paddingBottom="16dp"-->
+            <!--                android:clipToPadding="false"-->
+            <!--                android:baselineAligned="false"-->
+            <!--                android:orientation="horizontal">-->
+
+            <LinearLayout
+                android:id="@+id/llPrivacyPolicy"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="60dp"
+                android:layout_marginEnd="4dp"
+                android:layout_weight="1"
+                android:background="@drawable/shape_profile_button_background"
+                android:backgroundTint="?attr/colorSurfaceVariant15"
+                android:elevation="8dp"
+                app:layout_constraintEnd_toStartOf="@id/llSuggestionFeedback"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="6dp"
+                    android:layout_marginVertical="3dp"
+                    android:gravity="center"
+                    android:text="@string/privacy_policy"
+                    android:textColor="@color/white"
+                    app:autoSizeMaxTextSize="18sp"
+                    app:autoSizeMinTextSize="12sp"
+                    app:autoSizeStepGranularity="2sp"
+                    app:autoSizeTextType="uniform" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llSuggestionFeedback"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="60dp"
+                android:layout_marginEnd="4dp"
+                android:layout_weight="1"
+                android:background="@drawable/shape_profile_button_background"
+                android:backgroundTint="?attr/colorSurfaceVariant16"
+                android:elevation="8dp"
+                app:layout_constraintEnd_toStartOf="@id/llChangeTheme"
+                app:layout_constraintStart_toEndOf="@id/llPrivacyPolicy"
+                app:layout_constraintTop_toTopOf="parent"
+                android:visibility="visible">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="6dp"
+                    android:layout_marginVertical="3dp"
+                    android:gravity="center"
+                    android:text="@string/suggestion_feedback"
+                    android:textColor="?attr/colorOnSurfaceVariant14"
+                    app:autoSizeMaxTextSize="18sp"
+                    app:autoSizeMinTextSize="12sp"
+                    app:autoSizeStepGranularity="2sp"
+                    app:autoSizeTextType="uniform" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/llChangeTheme"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="60dp"
+                android:layout_marginEnd="16dp"
+                android:layout_weight="1"
+                android:background="@drawable/shape_profile_button_background"
+                android:backgroundTint="?attr/colorSurfaceVariant14"
+                android:elevation="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/llSuggestionFeedback"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="6dp"
+                    android:layout_marginVertical="3dp"
+                    android:gravity="center"
+                    android:text="@string/change_theme"
+                    android:textColor="@color/white"
+                    app:autoSizeMaxTextSize="18sp"
+                    app:autoSizeMinTextSize="12sp"
+                    app:autoSizeStepGranularity="2sp"
+                    app:autoSizeTextType="uniform" />
+            </LinearLayout>
+
+            <!--            </LinearLayout>-->
+
+
+            <LinearLayout
+                android:id="@+id/llPointHistory"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginHorizontal="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/shape_profile_button_background"
+                android:backgroundTint="?attr/colorSurfaceVariant16"
+                android:elevation="8dp"
+                app:layout_constraintEnd_toStartOf="@id/llChangeTheme"
+                app:layout_constraintStart_toEndOf="@id/llPrivacyPolicy"
+                app:layout_constraintTop_toBottomOf="@id/llSuggestionFeedback">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="6dp"
+                    android:layout_marginVertical="3dp"
+                    android:gravity="center"
+                    android:text="@string/point_history"
+                    android:textColor="?attr/colorOnSurfaceVariant14"
+                    app:autoSizeMaxTextSize="18sp"
+                    app:autoSizeMinTextSize="12sp"
+                    app:autoSizeStepGranularity="2sp"
+                    app:autoSizeTextType="uniform" />
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/tvCollectYourGift"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:gravity="center_horizontal"
+                android:text="@string/collect_your_gift"
+                android:textColor="?attr/colorOnSurfaceVariant5"
+                android:textSize="24sp"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/llPointHistory" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvGifts"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_marginHorizontal="0dp"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvCollectYourGift" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <FrameLayout
+        android:id="@+id/flAvatarBackground"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/flProfileDataBackground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="1"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <FrameLayout
+            android:layout_width="1060dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal|bottom"
+            android:background="@drawable/shape_profile_round_background"
+            android:backgroundTint="?attr/colorOnSurfaceVariant5" />
+
+
+        <FrameLayout
+            android:layout_width="650dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal|bottom"
+            android:background="@drawable/shape_profile_round_background"
+            android:backgroundTint="?attr/colorSurfaceVariant13" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/tvUserName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:ellipsize="none"
+        android:fontFamily="@font/montserrat_bold"
+        android:singleLine="true"
+        android:text=""
+        android:textColor="?attr/colorOnSurfaceVariant5"
+        app:autoSizeMaxTextSize="24sp"
+        app:autoSizeMinTextSize="12sp"
+        app:autoSizeStepGranularity="2sp"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <FrameLayout
+        android:id="@+id/flAvatarContainer"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="14dp"
+        app:layout_constraintBottom_toTopOf="@id/flProfileDataBackground"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvUserName">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ivAvatar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:scaleType="centerCrop"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CircleShapeAppearance"
+            android:visibility="gone" />
+
+
+        <ImageView
+            android:id="@+id/ivAvatarPlaceholder"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:scaleType="centerCrop"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CircleShapeAppearance"
+            app:srcCompat="@drawable/ic_giveaway_user_avatar"
+            app:tint="?attr/colorOnSurfaceVariant5"/>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tvSignIn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_bold"
+            android:padding="8dp"
+            android:text="@string/sign_in"
+            android:textColor="?attr/colorOnSurfaceVariant5"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tvSignOut"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_bold"
+            android:padding="8dp"
+            android:text="@string/sign_out"
+            android:textColor="?attr/colorOnSurfaceVariant5"
+            android:textSize="20sp"
+            android:visibility="gone" />
+
+    </FrameLayout>
+
+
+    <include
+        android:id="@+id/lockUi"
+        layout="@layout/include_lock_ui"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

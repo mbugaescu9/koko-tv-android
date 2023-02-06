@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    android:clickable="true"
+    android:focusable="true">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginHorizontal="24dp"
+        android:background="@android:color/transparent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginVertical="12dp"
+            android:background="@drawable/shape_dialog_background_rounded_corners"
+            android:backgroundTint="?attr/colorSurfaceVariant9"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_regular"
+                android:gravity="center"
+                android:minHeight="80dp"
+                android:paddingVertical="30dp"
+                android:text="Choose Your Theme"
+                android:textColor="?attr/colorOnSurfaceVariant13"
+                android:textSize="27sp" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="85dp"
+                android:background="@color/stTropaz">
+
+                <LinearLayout
+                    android:id="@+id/buttonNew"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_margin="16dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:gravity="center_vertical"
+                        android:text="Light Mode"
+                        android:textColor="@color/white"
+                        android:textSize="25sp" />
+
+                    <!--            <ImageView-->
+                    <!--                android:id="@+id/imageView"-->
+                    <!--                android:layout_width="55dp"-->
+                    <!--                android:layout_height="match_parent"-->
+                    <!--                android:layout_marginEnd="16dp"-->
+                    <!--                app:srcCompat="@drawable/playstore_icon" />-->
+                </LinearLayout>
+            </FrameLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="16dp" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="85dp"
+                android:background="@color/black">
+
+                <FrameLayout
+                    android:id="@+id/buttonClassic"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="?android:attr/selectableItemBackground">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="16dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:gravity="center_vertical"
+                        android:text="Night Mode"
+                        android:textColor="@color/corn"
+                        android:textSize="25sp" />
+                </FrameLayout>
+            </FrameLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="40dp" />
+        </LinearLayout>
+
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:padding="6dp"
+            android:clipToPadding="false">
+
+            <View
+                android:id="@+id/ivClose"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/shape_dialog_close"
+                android:elevation="4dp" />
+        </FrameLayout>
+    </FrameLayout>
+</FrameLayout>

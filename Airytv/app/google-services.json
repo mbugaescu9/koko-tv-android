@@ -1,0 +1,235 @@
+{
+  "project_info": {
+    "project_number": "166389273154",
+    "firebase_url": "https://shining-insight-149123.firebaseio.com",
+    "project_id": "shining-insight-149123",
+    "storage_bucket": "shining-insight-149123.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:166389273154:android:2ae2d44ab8c41661",
+        "android_client_info": {
+          "package_name": "com.airytv.android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "166389273154-is5jpl49b0kvbr4vnp7fs0eg3boobnio.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.airytv.android",
+            "certificate_hash": "3cbae61cc42a3e796f8d3e773ea7db4d1f38dff8"
+          }
+        },
+        {
+          "client_id": "166389273154-oek1j9hhpplmbpbp0tte0pdesi3qkn1q.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.airytv.android",
+            "certificate_hash": "a3c407558f40ba45049533b83f8cc9b670cb4c33"
+          }
+        },
+        {
+          "client_id": "166389273154-rr5o9kca6eve2po78dn8ocr59gvijo2o.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.airytv.android",
+            "certificate_hash": "eb99e976f06797c263f2018ff0ee526dc9bb0aef"
+          }
+        },
+        {
+          "client_id": "166389273154-lqo84u4pe0i6eojjfuco7643fdncoc9c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAPOsFYqIeYE1KTvWik5aW1rFMnvZbgYp4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "166389273154-8otuvpk4t98brl86hqmuvmebkhgpj9s6.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "166389273154-1dhaoc95beour6uaqn59uo03lp2eqchf.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.koko.ios"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:166389273154:android:ac724e34e6b9d1f78093db",
+        "android_client_info": {
+          "package_name": "com.freeairytv.android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "166389273154-3pmkkcbsgcb9a6t0c6cbn61nd3fdnncm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.freeairytv.android",
+            "certificate_hash": "eb99e976f06797c263f2018ff0ee526dc9bb0aef"
+          }
+        },
+        {
+          "client_id": "166389273154-4dsnafs21jrsnfg5q6aa483k7r7tvoq6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.freeairytv.android",
+            "certificate_hash": "3cbae61cc42a3e796f8d3e773ea7db4d1f38dff8"
+          }
+        },
+        {
+          "client_id": "166389273154-fi8ocomffd3q7a3n1hndupp8ch20gq77.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.freeairytv.android",
+            "certificate_hash": "a3c407558f40ba45049533b83f8cc9b670cb4c33"
+          }
+        },
+        {
+          "client_id": "166389273154-lqo84u4pe0i6eojjfuco7643fdncoc9c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAPOsFYqIeYE1KTvWik5aW1rFMnvZbgYp4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "166389273154-8otuvpk4t98brl86hqmuvmebkhgpj9s6.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "166389273154-1dhaoc95beour6uaqn59uo03lp2eqchf.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.koko.ios"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:166389273154:android:b508488e07a1eed58093db",
+        "android_client_info": {
+          "package_name": "com.freeairytv.androidtv"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "166389273154-7grhmlh16rjul1jmuh1q5bbf1a4l4psp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.freeairytv.androidtv",
+            "certificate_hash": "a3c407558f40ba45049533b83f8cc9b670cb4c33"
+          }
+        },
+        {
+          "client_id": "166389273154-7uo6qiujrudlsenc6nb8cmjpjbvar81f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.freeairytv.androidtv",
+            "certificate_hash": "3cbae61cc42a3e796f8d3e773ea7db4d1f38dff8"
+          }
+        },
+        {
+          "client_id": "166389273154-d8626iucd20atccjuo8ekjosso2ahr5g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.freeairytv.androidtv",
+            "certificate_hash": "eb99e976f06797c263f2018ff0ee526dc9bb0aef"
+          }
+        },
+        {
+          "client_id": "166389273154-lqo84u4pe0i6eojjfuco7643fdncoc9c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAPOsFYqIeYE1KTvWik5aW1rFMnvZbgYp4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "166389273154-8otuvpk4t98brl86hqmuvmebkhgpj9s6.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "166389273154-1dhaoc95beour6uaqn59uo03lp2eqchf.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.koko.ios"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:166389273154:android:e70c2ed88683c51d8093db",
+        "android_client_info": {
+          "package_name": "com.kokoconnect.android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "166389273154-ucf397n04gml7b0gbbiddbar537vpohh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.kokoconnect.android",
+            "certificate_hash": "5625c1ec083598c24d202cc7c057acee6af408b8"
+          }
+        },
+        {
+          "client_id": "166389273154-lqo84u4pe0i6eojjfuco7643fdncoc9c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAPOsFYqIeYE1KTvWik5aW1rFMnvZbgYp4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "166389273154-8otuvpk4t98brl86hqmuvmebkhgpj9s6.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "166389273154-1dhaoc95beour6uaqn59uo03lp2eqchf.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.koko.ios"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

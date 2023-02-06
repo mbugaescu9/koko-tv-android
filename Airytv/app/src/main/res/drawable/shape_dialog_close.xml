@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="oval">
+            <solid android:color="?attr/colorSurfaceVariant9" />
+        </shape>
+    </item>
+    <item
+        android:drawable="@drawable/shape_dialog_close_cross"
+        android:gravity="center"/>
+</layer-list>

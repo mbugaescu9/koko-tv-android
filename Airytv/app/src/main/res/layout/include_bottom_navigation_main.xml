@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingHorizontal="10dp"
+    android:orientation="horizontal"
+    android:background="?attr/colorSurface">
+
+    <RelativeLayout
+        android:id="@+id/rlTv"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@drawable/shape_menu_main_item_background"
+        android:backgroundTint="@color/color_menu_item"
+        android:orientation="vertical"
+        android:clickable="true"
+        android:focusable="true">
+
+        <ImageView
+            android:id="@+id/ivTv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_above="@id/tvTv"
+            android:layout_marginTop="12dp"
+            app:srcCompat="@drawable/ic_menu_tv"
+            app:tint="@color/color_menu_item" />
+
+        <TextView
+            android:id="@+id/tvTv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="6dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/montserrat_regular"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:text="@string/tv"
+            android:textAllCaps="false"
+            android:textSize="12sp"
+            android:textColor="@color/color_menu_item" />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/rlVod"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@drawable/shape_menu_main_item_background"
+        android:backgroundTint="@color/color_menu_item"
+        android:orientation="vertical"
+        android:clickable="true"
+        android:focusable="true">
+
+
+        <ImageView
+            android:id="@+id/ivVod"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_above="@id/tvVod"
+            android:layout_marginTop="12dp"
+            android:backgroundTint="@color/color_menu_item"
+            app:srcCompat="@drawable/ic_menu_vod"
+            app:tint="@color/color_menu_item"/>
+
+        <TextView
+            android:id="@+id/tvVod"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="6dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/montserrat_regular"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:text="@string/vod"
+            android:textAllCaps="false"
+            android:textSize="12sp"
+            android:textColor="@color/color_menu_item" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlFreeGift"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@drawable/shape_menu_main_item_background"
+        android:backgroundTint="@color/color_menu_item"
+        android:orientation="vertical"
+        android:clickable="true"
+        android:focusable="true">
+
+
+        <ImageView
+            android:id="@+id/ivFreeGift"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_above="@id/tvFreeGift"
+            android:layout_marginTop="12dp"
+            android:backgroundTint="@color/color_menu_item"
+            app:srcCompat="@drawable/ic_menu_giftcard"
+            app:tint="@color/color_menu_item"/>
+
+        <TextView
+            android:id="@+id/tvFreeGift"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="6dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/montserrat_regular"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:text="@string/free_gift"
+            android:textAllCaps="false"
+            android:textSize="12sp"
+            android:textColor="@color/color_menu_item" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlProfile"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@drawable/shape_menu_main_item_background"
+        android:backgroundTint="@color/color_menu_item"
+        android:orientation="vertical"
+        android:clickable="true"
+        android:focusable="true">
+
+
+        <ImageView
+            android:id="@+id/ivProfile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_above="@id/tvProfile"
+            android:layout_marginTop="12dp"
+            app:srcCompat="@drawable/ic_menu_profile"
+            app:tint="@color/color_menu_item"/>
+
+        <TextView
+            android:id="@+id/tvProfile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="6dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/montserrat_regular"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:text="@string/profile"
+            android:textAllCaps="false"
+            android:textSize="12sp"
+            android:textColor="@color/color_menu_item" />
+
+    </RelativeLayout>
+
+</LinearLayout>

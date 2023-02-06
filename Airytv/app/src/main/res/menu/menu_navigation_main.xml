@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_main_tv"
+        android:enabled="true"
+        android:icon="@drawable/ic_menu_tv"
+        android:title="@string/tv" />
+    <item
+        android:id="@+id/menu_main_vod"
+        android:enabled="true"
+        android:icon="@drawable/ic_menu_vod"
+        android:title="@string/vod" />
+
+    <item
+        android:id="@+id/menu_main_giveaways"
+        android:enabled="true"
+        android:icon="@drawable/ic_menu_giftcard"
+        android:title="@string/free_gift" />
+
+    <item
+        android:id="@+id/menu_main_profile"
+        android:enabled="true"
+        android:icon="@drawable/ic_menu_profile"
+        android:title="@string/profile" />
+</menu>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="273dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="?attr/colorSurfaceVariant9"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/ivClose"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_gravity="end"
+            app:srcCompat="@drawable/ic_close_dialog"
+            app:tint="?attr/colorAccent" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:gravity="center"
+        android:fontFamily="@font/montserrat_regular"
+        android:text="@string/rating_dialog_see_more_movies"
+        android:textColor="?attr/colorOnSurfaceVariant13"
+        android:textSize="20sp" />
+
+    <!--<RatingBar-->
+    <!--android:id="@+id/ratingBar"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="center_horizontal"-->
+    <!--android:layout_marginTop="24dp"-->
+    <!--android:numStars="5"-->
+    <!--android:stepSize="1" />-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/btnSend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="16dp"
+                android:background="@android:color/transparent"
+                android:text="@string/rating_dialog_yes"
+                android:fontFamily="@font/montserrat_bold"
+                android:textAllCaps="true"
+                android:textColor="?attr/colorAccent"
+                android:textSize="20sp"
+                android:textStyle="normal" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/btnLater"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="16dp"
+                android:background="@android:color/transparent"
+                android:fontFamily="@font/montserrat_regular"
+                android:text="@string/rating_dialog_maybe_later"
+                android:textAllCaps="false"
+                android:textColor="?attr/colorOnSurfaceVariant13"
+                android:textSize="20sp"
+                android:textStyle="normal" />
+        </FrameLayout>
+
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,57 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    apply from: 'versions.gradle'
+    addRepos(repositories)
+
+    ext.kotlin_version = '1.6.10'
+    ext.anko_version= '0.10.8'
+    repositories {
+        mavenCentral()
+        google()
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.3.1'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath 'com.google.firebase:firebase-crashlytics-gradle:2.9.2'
+        classpath 'com.google.gms:google-services:4.3.14'
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    buildDir = "${rootProject.rootDir}/build/${project.name}"
+    repositories {
+        google()
+
+        mavenCentral()
+
+        maven { url "https://jitpack.io"
+            allowInsecureProtocol = true
+
+        }
+        maven { url "https://maven.google.com"
+            allowInsecureProtocol = true
+
+        }
+        maven { url 'https://jitpack.io'
+            allowInsecureProtocol = true
+
+        }
+    /*    maven {
+            url "https://cdn01.static.adfalcon.com/sdk/android/maven"
+            allowInsecureProtocol = true
+        }*/
+        maven { url "https://dl.bintray.com/kotlin/kotlin-dev"
+            allowInsecureProtocol = true
+        }
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

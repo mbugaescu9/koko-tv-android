@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:orientation="horizontal"
+    android:paddingTop="?attr/guideMargin"
+    android:paddingBottom="?attr/guideMargin">
+
+    <FrameLayout
+        android:id="@+id/channelLayout"
+        android:layout_width="?attr/guideChannelItemWidth"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimarySurface" >
+
+        <View
+            android:id="@+id/isCurrentChannel"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/guideItemHeight"
+            android:visibility="gone"
+            android:background="?attr/colorSurfaceVariant18"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="?attr/guideItemHeight">
+
+            <FrameLayout
+                android:layout_width="?attr/guideItemHeight"
+                android:layout_height="?attr/guideItemHeight">
+
+                <TextView
+                    android:id="@+id/channelNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="?attr/guideItemHeight"
+                    android:minWidth="@dimen/guide_item_program_num_width"
+                    android:layout_gravity="center"
+                    app:fontFamily="?attr/textFontRegular"
+                    android:gravity="center"
+                    app:autoSizeMaxTextSize="12sp"
+                    app:autoSizeMinTextSize="1sp"
+                    app:autoSizeTextType="uniform"
+                    android:textColor="?attr/colorOnPrimarySurface3" />
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/channelName"
+                android:layout_width="?attr/guideChannelNameWidth"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:maxLines="2"
+                android:paddingEnd="4dp"
+                android:paddingStart="0dp"
+                android:includeFontPadding="false"
+                android:textAlignment="viewStart"
+                android:textColor="?attr/colorOnPrimarySurface1"
+                app:fontFamily="?attr/textFontRegular"
+                android:textSize="?attr/guideChannelTextSize"
+                tools:ignore="RtlHardcoded" />
+
+        </LinearLayout>
+    </FrameLayout>
+
+    <com.kokoconnect.android.ui.view.TimelineRecyclerView
+        android:id="@+id/channelGuide"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="?attr/guideDoubleMargin" />
+</LinearLayout>

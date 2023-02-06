@@ -1,0 +1,109 @@
+*.iml
+.gradle
+/local.properties
+/.idea/caches
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+
+bin/
+gen/
+coverage/
+tmp/
+.classpath
+.settings/
+.project
+lint.xml
+project.properties
+*.xmi
+.metadata
+
+build.xml
+
+custom_rules.xml
+.idea
+*/*/build/
+*/build
+app/manifest-merger-production-release-report.txt
+infer-out
+captures/
+
+# Android generated
+bin
+gen
+libs
+obj
+
+# IntelliJ IDEA
+*.ipr
+*.iws
+classes
+gen-external-apklibs
+
+# Eclipse
+.settings
+.checkstyle
+.cproject
+
+# Gradle
+build
+buildout
+out
+
+# Maven
+target
+release.properties
+pom.xml.*
+
+# Ant
+ant.properties
+local.properties
+proguard.cfg
+proguard-project.txt
+
+# Bazel
+bazel-bin
+bazel-genfiles
+bazel-out
+bazel-testlogs
+
+# Other
+cmake-build-debug
+dist
+tmp
+
+# External native builds
+
+# VP9 extension
+extensions/vp9/src/main/jni/libvpx
+extensions/vp9/src/main/jni/libvpx_android_configs
+extensions/vp9/src/main/jni/libyuv
+
+# AV1 extension
+extensions/av1/src/main/jni/cpu_features
+extensions/av1/src/main/jni/libgav1
+
+# Opus extension
+extensions/opus/src/main/jni/libopus
+
+# FLAC extension
+extensions/flac/src/main/jni/flac
+
+# FFmpeg extension
+extensions/ffmpeg/src/main/jni/ffmpeg
+
+# Cronet extension
+extensions/cronet/jniLibs/*
+!extensions/cronet/jniLibs/README.md
+extensions/cronet/libs/*
+!extensions/cronet/libs/README.md
+
+*build/intermediates/*
+output.json
+*.apk

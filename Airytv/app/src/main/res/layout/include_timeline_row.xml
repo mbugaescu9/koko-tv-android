@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingTop="?attr/guideMargin"
+    android:paddingBottom="?attr/guideMargin">
+
+    <LinearLayout
+        android:id="@+id/genreLayout"
+        android:layout_width="?attr/guideChannelItemWidth"
+        android:layout_height="?attr/guideTimelineHeight"
+        android:layout_marginVertical="0dp"
+        android:background="?attr/colorSurfaceVariant4"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:scaleType="centerInside"
+            android:src="@drawable/shape_arrow"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+    <com.kokoconnect.android.ui.view.TimelineRecyclerView
+        android:id="@+id/timelineRecycler"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/guideTimelineHeight"
+        android:layout_marginStart="?attr/guideDoubleMargin" />
+</LinearLayout>

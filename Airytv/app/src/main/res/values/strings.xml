@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingTranslation">
+    <string name="inmobi_appid">c46ddb4b62ca4083a749182a89cbd08a</string>
+    <string name="ironsource_appid">9a00a335</string>
+    <string name="admob_appid">ca-app-pub-1776754790536003~7686929852</string>
+    <string name="admob_unitid_banner">ca-app-pub-1776754790536003/2668762617</string>
+    <string name="admob_unitid_interstitial">ca-app-pub-1776754790536003/5343304719</string>
+    <string name="admob_unitid_ad_app_open">ca-app-pub-1776754790536003/1718808608</string>
+    <string name="mopub_unitid_rewarded">7e3a26769fcf4ba6a7c55533a72b6d1e</string>
+    <string name="mopub_unitid_rewarded_free">f589d85693114071b1b3a09f9fe7835e</string>
+    <string name="mopub_unitid_rewarded_test">920b6145fb1546cf8b5cf2ac34638bb7</string>
+    <string name="chartboost_appid">5dae009d77a04e0b48a25342</string>
+    <string name="chartboost_appsignature">e6393038d99cfa91318c7bbbf5277bef5ab35a5d</string>
+    <string name="chartboost_appid_free">5e198783c442d909e2add5e0</string>
+    <string name="chartboost_appsignature_free">3dabf4f4bf5a23423b312f85f50c8f3634600004</string>
+    <string name="tapjoy_api_key">gYsjY3ijSqG7YdnGK4O9sgECdKnVicQjVS7GLLMH07sYcc8Q_0o0ukUgwo-D</string>
+    <string name="firebase_api">AIzaSyDfVgU2oWfOmnlVcRZUi_mj-k_DnE1r-NQ</string>
+
+    <string name="facebook_app_id">2636068153080390</string>
+    <string name="fb_login_protocol_scheme">fb2636068153080390</string>
+    <string name="amazon_key">e6f8e6691ce74c929b92433a6f2539db</string>
+    <string name="ogury_key">OGY-8BA86DAC2B89</string>
+    <string name="bfio_key">22d051e9-82e8-43e2-f5d7-f5b7dc23a53e</string>
+
+    <string name="app_name">Kokoconnect.tv</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="terms_of_use">Terms of Use</string>
+    <string name="terms_or_service">Terms of Use</string>
+
+    <string name="choose_your_theme">Choose Theme</string>
+    <string name="giveaways">Giveaways</string>
+    <string name="signIn">Sign In</string>
+    <string name="signOut">Sign Out</string>
+    <string name="balance_text">You have %1$s points on your balance</string>>
+
+    <string name="error_network_problem">No internet connection</string>
+    <string name="error_video_idle">Content not available</string>
+    <string name="error_server_error">Server error, please try again later</string>
+    <string name="error_server_error_code">Server error</string>
+    <string name="unknown_error">Unknown error</string>
+
+    <string name="signin_title">Sign in with Kokoconnect.tv</string>
+    <string name="please_login_or_signup">Please Login or Sign up for additional Features</string>
+
+    <string name="sign_in_with_email">Sign in with Kokoconnect.tv</string>
+    <string name="sign_in_with_google">Sign in with Google</string>
+    <string name="sign_in_with_facebook">Sign in with Facebook</string>
+
+    <string name="signin_error_email">Please insert correct e-mail</string>
+    <string name="signin_error_password">Please insert correct password</string>
+    <string name="signin_error_title">Sign In Failed</string>
+    <string name="signin_error_server">Server error</string>
+    <string name="signin_hint_email">Email</string>
+    <string name="signin_hint_password">Enter password</string>
+    <string name="signin_success">Sign In Success</string>
+    <string name="signin_request_email">Please enter your email address to sign in</string>
+
+    <string name="signup_title">Sign up with Kokoconnect.tv</string>
+    <string name="signup_error_email">Please insert correct e-mail</string>
+    <string name="signup_error_password">Please insert correct password</string>
+    <string name="signup_error_repeat_password">Passwords do not match</string>
+    <string name="signup_error_title">Sign Up Failed</string>
+    <string name="signup_hint_email">Email</string>
+    <string name="signup_hint_first_name">First name</string>
+    <string name="signup_hint_last_name">Last name</string>
+    <string name="signup_hint_password">Enter password</string>
+    <string name="signup_hint_repeat_password">Repeat password</string>
+    <string name="signup_success">Sign Up Success</string>
+
+    <string name="sign_in_private_archive">Private archive</string>
+    <string name="archive_signup_verification_email">Archive.org sent an email with verification link.
+        \nPlease check your Spam folder if you do not see the verification email in your Inbox.
+        \nClick on the verification link within it to finish creating your account</string>
+    <string name="archive_login_success">You successfully logged in to Archive.org account. Now you can watch more videos!</string>
+
+    <string name="player_error_private_unavailable">Content is temporary unavailable</string>
+    <string name="player_error_no_internet_connection_button">Retry</string>
+    <string name="player_error_private_unavailable_button">Exit</string>
+    <string name="player_error_archive_text_need_auth">This channel contains private content that requires registration on archive.org website. Would you like to sign in?</string>
+    <string name="player_error_archive_button_auth">Sign in</string>
+    <string name="player_error_youtube_unavailable">YouTube player unavailable on this device</string>
+    <string name="player_error_exoplayer_unavailable">ExoPlayer player unavailable on this device</string>
+    <string name="player_error_dailymotion_unavailable">Dailymotion player unavailable on this device</string>
+    <string name="player_error_youtube_unavailable_button">Exit</string>
+    <string name="player_ad_number">Ad %s/%s</string>
+
+
+    <string name="giveaways_list_events_empty">List is empty</string>
+    <string name="giveaways_list_winners_empty">Winners list is empty</string>
+    <string name="giveaways_entry_error_title">Failed</string>
+    <string name="giveaways_entry_error_text">You have reached daily maximum number of entries (%d entries)</string>
+    <string name="giveaways_entry_error_cancel">Close</string>
+    <string name="giveaways_noads_error_text">Sorry…\n\nWe have no ads to serve right now for this offer.\n\nPlease try later.</string>
+    <string name="giveaways_noads_error_cancel">Close</string>
+    <string name="giveaways_info_dialog">
+        <![CDATA[
+        <font color="#EAB200">Welcome to the Kokoconnect.tv Giveaway EXTRAVANGANZA!!</font>
+        <br/>
+        <br/>
+        Here\'s how it works - you click ENTER and you\'ll have to watch an ad
+        (we know ads suck but it helps pay the bills).
+        Then when the ad is done THAT’S IT.
+        You can enter as many times as you like, more entries = more chances to win.
+        The more entries we get, the higher the prizes we can offer.
+        <br/>
+        <br/>
+        So smash that <font color="#EAB200">ENTER</font> button
+        ]]>
+    </string>
+    <string name="giveaways_info_dialog_button">CONTINUE</string>
+
+    <string name="rating_dialog_see_more_movies">Would you like to see more \nTV &amp; Movies?</string>
+    <string name="rating_dialog_maybe_later">Maybe later</string>
+    <string name="rating_dialog_yes">Yes</string>
+    <string name="rating_dialog_google_license">"Google Play and the Google Play logo are trademarks of Google LLC."</string>
+
+    <string name="reset_password">Reset Password</string>
+    <string name="email_me">Email me</string>
+    <string name="reset_password_error_email">Please insert correct e-mail</string>
+    <string name="reset_password_error_title">Reset Password Failed</string>
+    <string name="reset_password_hint_email">Email</string>
+    <string name="reset_password_success">Reset Password Success</string>
+
+    <string name="giveaways_rules_faq_name">FAQ</string>
+    <string name="giveaways_rules_faq_description">Popular questions and answers</string>
+    <string name="giveaways_rules_rules_name">Rules</string>
+    <string name="giveaways_rules_rules_description">Sweepstakes Official Rules</string>
+
+    <string name="content_source">by %1$s</string>
+    <string name="content_description_show_program_description">Show Description</string>
+
+    <string name="collection_show_more">See More</string>
+    <string name="collection_back">Back</string>
+    <string name="episodes">Episodes</string>
+
+    <string name="list_loading">loading</string>
+
+    <string name="tv">TV</string>
+    <string name="vod"> V.O.D.</string>
+    <string name="free_gift">Free Gift</string>
+    <string name="profile">Profile</string>
+
+    <string name="available_tickets">Available Tickets</string>
+    <string name="no_available_gifts">No Available Gifts</string>
+    <string name="please_authorise_first">Please, authorise first</string>
+    <string name="end_date">End Date: %s</string>
+    <string name="gift_card_code">Gift Card Code: \n%s</string>
+    <string name="ticket_entered_by_others">Ticket entered\nby others</string>
+    <string name="congratulations_user">Congrats, %s!</string>
+    <string name="please_check_you_profile_code">Please check you profile for your code</string>
+    <string name="add_ticket">Add Ticket</string>
+    <string name="get_more_tickets">Get More Tickets</string>
+    <string name="view_winner">View Winner</string>
+
+    <string name="user_profile_hi">Hi, %s</string>
+    <string name="collect_your_gift">Collect your Gift</string>
+    <string name="suggestion_feedback">Suggestion/Feedback</string>
+    <string name="change_theme">Change Theme</string>
+    <string name="camera">Camera</string>
+    <string name="gallery">Gallery</string>
+    <string name="pick_image_from">Pick image from</string>
+    <string name="camera_app_not_found">Camera app not found</string>
+    <string name="camera_not_found">Camera not found</string>
+    <string name="gallery_app_not_found">Gallery app not found</string>
+
+    <string name="here_is_record_of_rewards">Here\'s a record of where your rewards activities</string>
+    <string name="gained_ticket_for_watching_ads">Gained %s Ticket for watching Ads</string>
+    <string name="spent_ticket_on_giveaway">Spent %s Ticket on Giveaway</string>
+    <string name="transaction_date_placeholder">XX/XX/XX</string>
+    <string name="back">Back</string>
+    <string name="point_history">Point History</string>
+
+    <string name="search">Search</string>
+    <string name="please_select_a_form">Please select a form</string>
+    <string name="content_suggestion">Content Suggestion</string>
+    <string name="technical_assistance">Technical Assistance</string>
+    <string name="your_suggestions">Your Suggestions</string>
+    <string name="content_suggestion_description">Thank you for taking an interest in expanding our catalog! Though we can\'t promise you anything, we\'ll always take your suggestion seriously and will keep an eye out for the content you suggest.</string>
+    <string name="submit">Submit</string>
+
+    <string name="before_you_submit">Before you Submit, have you tried the following?</string>
+    <string name="clearing_your_web_cache">Clearing your web-cache in</string>
+    <string name="web_cache_settings_path">Setting > Browser > Clear Cache</string>
+    <string name="turning_off_and_on_your_device">Turning off and on your device</string>
+    <string name="power_button">Power Button</string>
+
+    <string name="please_tell_us_your_issue">Please tell us your issue in the following box below</string>
+    <string name="please_tell_us_your_technical_issue_here">Please tell us your technical issue here</string>
+    <string name="type_your_issue_before_submit">Type your issue before submit</string>
+    <string name="type_your_suggestion_before_submit">Type your suggestion before submit</string>
+    <string name="your_issue_successfully_submitted">Your issue successfully submitted</string>
+    <string name="your_suggestion_successfully_submitted">Your suggestion successfully submitted</string>
+    <string name="please_wait_a_while_before_submit_again">Please wait a while before submit again</string>
+
+    <string name="added_to_favourites">Added to favourites</string>
+    <string name="device_not_support_casting">Device no support casting</string>
+
+    <string name="sample_text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</string>
+    <string name="giveaways_faq_text">
+        <![CDATA[
+        FAQ
+        <br/><b>How do you enter a giveaway?</b>
+        <br/>Here’s the great part there is NO PURCHASE NECESSARY to enter or win a giveaway.  You can also enter as many times as is allowed.  Simple click the “Enter” button and it is that easy.
+        <br/><br/><b>User requirements</b>
+        <br/>Our giveaways are only available to individuals that are legal residents of, and living in the United States, who are eighteen (18) years of age or older and can enter into a legally binding contract under applicable law.
+        <br/><br/><b>How do I Win?</b>
+        <br/>Well winning is the easy part.  We randomly choose one (1) winner based on the entries within five (5) days after the end date/time of a giveaway.  The prize winner is then notified based upon the login or information they provided as part of account creation.  Email or electronic delivery notification will be used.  All prize winners are subject to eligibility verification.
+        <br/><br/><b>Limit on Entries</b>
+        <br/>Entries are sometimes limited and are automatically updated daily.  Each giveaway will provide you with a counter on the entry which will tell you how many times you may enter per day.  Once the counter has fulfilled your entries for that day you will have to come back the next day to receive more entries.
+        <br/><br/><b>Copyright Information</b>
+        <br/>All pictures used within the application are free license photos.
+        <br/><br/><b>Do I have to pay taxes on my winnings?</b>
+        <br/>Any giveaway that exceeds $600 will be reported on a W-9 and 1099-Misc as required by state law.  Those users who have a single win in excess of this amount will be required to provide a SSN in order to obtain their winnings. If you have any further questions about taxes you will need to refer to your accountant or tax professional.
+        ]]>
+    </string>
+    <string name="giveaways_rules_text">
+        <![CDATA[
+        <center>Sweepstakes</center>
+        <br/><center>Official Rules</center>
+
+        <br/><br/>1.  NO PURCHASE NECESSARY
+        <br/>2.  Eligibility:  The Sweepstakes (“Sweepstakes”) is open to all natural persons who are legal residents of the 50 United States and District of Columbia, who are at least 18 years old at the time of entry.  Void outside the USA, in Puerto Rico, the US Virgin Islands, and other United States territories and possessions.  The Sweepstakes is subject to all applicable federal, state, and local laws and regulations and is void where prohibited by law.
+        <br/>3.  Sponsorship:  Any giveaway which is officially sponsored will be noted prior to entry.  Unless otherwise noted no giveaways are sponsored by a company, LLC, and or person.
+        <br/>4.  Entry Period:  Sweepstakes running times and dates of entry will be included above the entry button.
+        <br/>5.  How to Enter:  During the Entry Period visit the sweepstakes link located within the application.  Follow the instructions given to complete any entry after clicking on the “Enter” button. You will be required to login to the system prior to being allowed any entry into the sweepstakes.  Login can either be created, or you can use existing Google or Facebook logins.  All prior agreements remain in effect depending on the platform for which you logged in for.
+        <br/>6.  Limitations on Entries:  Unless otherwise noted as part of the Sweepstakes there is no limitation on the number of entries.
+        <br/>7.  Choosing Winners:  Winners will be selected in a random drawing from among all eligible entries collected during the Entry Period within five (5) business days upon the Sweepstakes ending date. All winners will be contacted using the details provided prior to registration.  No other contact information will be valid.  If a prize is returned and could not be delivered then that prize will be void and forfeit.
+        <br/>8.  Odds:  The odds of winning will depend on the number of eligible entries received, according to the eligibility requirements of the Sweepstakes.
+        <br/>9.  WARNING:  ANY ATTEMPT BY ANY PERSON, WHETHER OR NOT AN ENTRANT, TO DELIBERATELY DAMAGE, DESTROY, TAMPER WITH OR VANDALIZE ANY SPONSOR-OWNED WEBSITE OR MOBILE APPLICATION OR RELATED SOCIAL NETWORKING SITE, THE ENTRY PROCESS, OR OTHERWISE INTERFERE WITH OR UNDERMINE THE LEGITIMATE OPERATION OF THE SWEEPSTAKES, MAY BE A VIOLATION OF CRIMINAL AND CIVIL LAWS AND SPONSOR RESERVES THE RIGHT TO SEEK DAMAGES AND DILIGENTLY PURSUE ALL REMEDIES AGAINST ANY SUCH PERSON TO THE FULLEST EXTENT PERMITTED BY LAW.
+        <br/>10.  General Terms:  By entering this Sweepstakes, you promise to abide by the Official Rules and decisions, which will be final and binding in all respects. YOU AGREE TO RELEASE, DISCHARGE, AND HOLD HARMLESS Kokoconnect.tv, ITS AFFILIATES, SUBSIDIARIES, EMPLOYEES, OFFICERS, DIRECTORS, AGENTS AND ASSIGNS FROM AND AGAINST ANY OR ALL CLAIMS, LOSSES, INJURIES, OR DAMAGES RESULTING FROM PARTICIPATION IN THE SWEEPSTAKES.  Except where prohibited by law, by accepting prize, winner grants a perpetual, worldwide, royalty-free license to use winner’s name, photograph, voice, and/or likeness without further authorization, compensation, or remuneration of any kind for advertising, promotion and other publicity purposes in any and all media now or hereafter known throughout the world.
+        <br/>11.  Winner’s Name:  The name and/or login is available only within application after the close of the Sweepstakes.
+        ]]>
+    </string>
+</resources>

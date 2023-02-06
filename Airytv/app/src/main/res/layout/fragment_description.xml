@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".ui.fragment.tv.DescriptionFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/description_toolbar_height"
+            android:background="?attr/colorSurfaceVariant4"
+            android:minHeight="@dimen/description_toolbar_height"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/llDescriptionContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/margin_description"
+                android:layout_marginEnd="4dp"
+                android:layout_alignParentStart="true"
+                android:layout_toStartOf="@id/buttonFavourite"
+                android:gravity="bottom"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textViewProgramName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:gravity="center_vertical"
+                    android:maxLines="1"
+                    android:singleLine="false"
+                    android:textColor="?attr/colorOnSurfaceVariant5"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/textViewSourceNameMain"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:textColor="?attr/colorOnSurfaceVariant16"
+                    android:textSize="11sp"
+                    android:textStyle="italic"
+                    android:visibility="visible" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/buttonFavourite"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="10dp"
+                android:layout_centerVertical="true"
+                android:contentDescription="@string/content_description_show_program_description"
+                android:layout_toStartOf="@id/buttonShare"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/ic_favorite"
+                app:tint="?attr/colorOnSurfaceVariant8"/>
+
+            <ImageView
+                android:id="@+id/buttonShare"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="10dp"
+                android:layout_centerVertical="true"
+                android:contentDescription="@string/content_description_show_program_description"
+                android:layout_toStartOf="@id/buttonSwitchMode"
+                app:srcCompat="@drawable/ic_share"
+                app:tint="?attr/colorOnSurfaceVariant8"/>
+
+            <ImageView
+                android:id="@+id/buttonSwitchMode"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="12dp"
+                android:layout_centerVertical="true"
+                android:contentDescription="@string/content_description_show_program_description"
+                android:layout_alignParentEnd="true"
+                app:srcCompat="@drawable/ic_information"
+                app:tint="?attr/colorOnSurfaceVariant8"/>
+        </RelativeLayout>
+
+        <ScrollView
+            android:id="@+id/layoutMoreInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorSurfaceVariant4"
+            android:fadeScrollbars="false"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="@dimen/description_content_height"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textViewProgramDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_description"
+                    android:layout_marginEnd="@dimen/margin_description"
+                    android:layout_marginBottom="8dp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:maxLines="6"
+                    android:textColor="?attr/colorOnSurfaceVariant2"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/textViewSourceName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_description"
+                    android:layout_marginEnd="@dimen/margin_description"
+                    android:layout_marginBottom="8dp"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:textColor="@color/gray"
+                    android:textSize="12sp"
+                    android:textStyle="italic" />
+
+                <TextView
+                    android:id="@+id/textViewProgramDuration"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_description"
+                    android:layout_marginEnd="@dimen/margin_description"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:textColor="?attr/colorOnSurfaceVariant2"
+                    android:textSize="12sp" />
+
+                <me.zhanghai.android.materialprogressbar.MaterialProgressBar
+                    android:id="@+id/programProgress"
+                    style="@style/Widget.MaterialProgressBar.ProgressBar.Horizontal.NoPadding"
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp"
+                    android:layout_gravity="bottom"
+                    android:layout_marginTop="16dp"
+                    android:indeterminate="false"
+                    android:max="100"
+                    android:progress="0"
+                    android:progressTint="?attr/colorOnSurfaceVariant7"
+                    android:progressTintMode="src_atop"
+                    app:mpb_progressStyle="horizontal"
+                    app:mpb_showProgressBackground="false"
+                    app:mpb_useIntrinsicPadding="false" />
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+</FrameLayout>

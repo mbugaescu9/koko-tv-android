@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.kokoconnect.android.ui.view.GuideItemView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tvName"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="?attr/guideMargin"
+    android:layout_marginRight="?attr/guideMargin"
+    android:background="?attr/colorSecondarySurface"
+    android:ellipsize="end"
+    android:fontFamily="?attr/textFontRegular"
+    android:gravity="center_vertical"
+    android:maxLines="1"
+    android:textColor="?attr/colorOnSecondarySurface"
+    android:textSize="?attr/guideProgramItemTextSize">
+
+    <!--    android:textAppearance="?android:textAppearanceMedium"-->
+</com.kokoconnect.android.ui.view.GuideItemView>

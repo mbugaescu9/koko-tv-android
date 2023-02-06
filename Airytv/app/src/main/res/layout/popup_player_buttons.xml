@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootPopupLayout"
+    android:focusable="false"
+    android:clickable="false"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.kokoconnect.android.ui.view.InterceptTouchFrameLayout
+        android:id="@+id/clickInterceptor"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="false"
+        android:focusable="false"
+        android:visibility="gone"/>
+
+    <ProgressBar
+        android:id="@+id/pbBuffering"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/overlayLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:focusable="false">
+
+        <ImageView
+            android:id="@+id/buttonSubtitles"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:padding="?attr/guideMargin"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/buttonMute"
+            app:srcCompat="@drawable/ic_closed_capture"
+            app:tint="@color/gray" />
+
+        <ImageView
+            android:id="@+id/buttonMute"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:padding="?attr/guideMargin"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/buttonFullscreen"
+            app:srcCompat="@drawable/ic_volume_off_black_24dp"
+            app:tint="@color/gray" />
+
+        <ImageView
+            android:id="@+id/buttonFullscreen"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/ic_fullscreen_black_24dp"
+            app:tint="@color/gray" />
+
+        <!--<androidx.mediarouter.app.MediaRouteButton-->
+        <!--android:id="@+id/mediaRouteRutton"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--app:layout_constraintTop_toTopOf="parent"-->
+        <!--app:layout_constraintEnd_toEndOf="parent"-->
+        <!--/>-->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

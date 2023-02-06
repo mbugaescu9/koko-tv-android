@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        app:srcCompat="@drawable/splash" />
+
+    <!--    <TextView-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_gravity="center"-->
+    <!--        android:layout_marginTop="130dp"-->
+    <!--        android:textSize="26sp"-->
+    <!--        android:textStyle="bold"-->
+    <!--        android:textColor="@color/ceruleanBlue"-->
+    <!--        android:text="YOUVU TV"-->
+    <!--        />-->
+
+    <com.kokoconnect.android.ui.view.DottedProgressBar
+        android:id="@+id/splashProgress"
+        android:layout_width="100dp"
+        android:layout_height="20dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="200dp"
+        app:activeDot="@drawable/splash_progress_dot_active"
+        app:dotSize="20dp"
+        app:inactiveDot="@drawable/splash_progress_dot"
+        app:jumpingSpeed="500"
+        app:maxDots="3"
+        app:spacing="16dp" />
+</FrameLayout>

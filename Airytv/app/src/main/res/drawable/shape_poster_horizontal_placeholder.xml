@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+<item>
+    <bitmap
+        android:filter="true"
+        android:tint="?attr/colorOnSurfaceVariant10"
+        android:src="@drawable/ic_poster_horizontal_placeholder"/>
+
+</item>
+
+</selector>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/signIn"
+        android:title="@string/signIn"
+        app:showAsAction="collapseActionView" />
+    <item
+        android:id="@+id/signOut"
+        android:title="@string/signOut"
+        android:visible="false"
+        app:showAsAction="collapseActionView" />
+    <item
+        android:id="@+id/privateArchive"
+        android:title="@string/sign_in_private_archive"
+        android:visible="false"
+        app:showAsAction="collapseActionView" />
+    <item
+        android:id="@+id/privacy"
+        android:title="@string/privacy_policy"
+        app:showAsAction="collapseActionView" />
+    <item
+        android:id="@+id/terms"
+        android:title="@string/terms_of_use"
+        app:showAsAction="collapseActionView" />
+    <item
+        android:id="@+id/choose_your_theme"
+        android:title="@string/choose_your_theme"
+        app:showAsAction="collapseActionView" />
+</menu>

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/graph_content"
+    app:startDestination="@id/fragmentProfile">
+
+    <fragment
+        android:id="@+id/fragmentProfile"
+        android:name="com.kokoconnect.android.ui.fragment.profile.ProfileFragment"
+        android:label="ProfileFragment"
+        tools:layout="@layout/fragment_profile">
+
+        <action
+            android:id="@+id/action_fragmentProfile_to_fragmentSignIn"
+            app:destination="@id/fragmentSignIn"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_fragmentProfile_to_fragmentTransactions"
+            app:destination="@id/fragmentTransactions"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_fragmentProfile_to_fragmentSuggestionFeedbackSelect"
+            app:destination="@id/fragmentSuggestionFeedbackSelect"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_fragmentProfile_to_fragmentPrivacyPolicy"
+            app:destination="@id/fragmentPrivacyPolicy"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentTransactions"
+        android:name="com.kokoconnect.android.ui.fragment.freegift.TransactionsFragment"
+        android:label="TransactionsFragment"
+        tools:layout="@layout/fragment_transactions">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentSignIn"
+        android:name="com.kokoconnect.android.ui.fragment.profile.SignInFragment"
+        android:label="SignInFragment"
+        tools:layout="@layout/fragment_sign_in">
+
+        <action
+            android:id="@+id/action_fragmentSignIn_to_fragmentSignInEmail"
+            app:destination="@id/fragmentSignInEmail"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentSignInEmail"
+        android:name="com.kokoconnect.android.ui.fragment.profile.SignInEmailFragment"
+        android:label="SignInEmailFragment"
+        tools:layout="@layout/fragment_sign_in_email">
+
+        <action
+            android:id="@+id/action_fragmentSignInEmail_to_fragmentSignUp"
+            app:destination="@id/fragmentSignUp"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_fragmentSignInEmail_to_fragmentResetPassword"
+            app:destination="@id/fragmentResetPassword"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentSignUp"
+        android:name="com.kokoconnect.android.ui.fragment.profile.SignUpFragment"
+        android:label="SignUpFragment"
+        tools:layout="@layout/fragment_sign_up">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentResetPassword"
+        android:name="com.kokoconnect.android.ui.fragment.profile.ResetPasswordFragment"
+        android:label="ResetPasswordFragment"
+        tools:layout="@layout/fragment_reset_password">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentSuggestionFeedbackSelect"
+        android:name="com.kokoconnect.android.ui.fragment.profile.SuggestionFeedbackSelectFragment"
+        android:label="SuggestionFeedbackSelectFragment"
+        tools:layout="@layout/fragment_suggestion_feedback_select">
+
+
+        <action
+            android:id="@+id/action_fragmentSuggestionFeedbackSelect_to_fragmentContentSuggestion"
+            app:destination="@id/fragmentContentSuggestion"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_fragmentSuggestionFeedbackSelect_to_fragmentTechnicalAssistance"
+            app:destination="@id/fragmentTechnicalAssistance"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentContentSuggestion"
+        android:name="com.kokoconnect.android.ui.fragment.profile.ContentSuggestionFragment"
+        android:label="ContentSuggestionFragment"
+        tools:layout="@layout/fragment_content_suggestion">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentTechnicalAssistance"
+        android:name="com.kokoconnect.android.ui.fragment.profile.TechnicalAssistanceFragment"
+        android:label="TechnicalAssistanceFragment"
+        tools:layout="@layout/fragment_technical_assistance">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentPrivacyPolicy"
+        android:name="com.kokoconnect.android.ui.fragment.profile.PrivacyPolicyFragment"
+        android:label="PrivacyPolicyFragment"
+        tools:layout="@layout/fragment_privacy_policy">
+
+    </fragment>
+
+</navigation>

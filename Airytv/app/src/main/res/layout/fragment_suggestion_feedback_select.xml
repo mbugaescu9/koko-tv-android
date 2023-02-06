@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorSurfaceVariant13">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="70dp"
+        android:orientation="vertical"
+        android:layout_gravity="center">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/please_select_a_form"
+            android:textSize="20sp"
+            android:fontFamily="@font/montserrat_semi_bold"
+            android:textColor="?attr/colorOnSurfaceVariant5"/>
+
+
+        <FrameLayout
+            android:id="@+id/flContentSuggestion"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginTop="36dp"
+            android:layout_marginHorizontal="42dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="20dp"
+            android:background="@drawable/shape_content_suggestion_button_background">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/content_suggestion"
+                android:textSize="20sp"
+                android:textColor="?attr/colorOnSurfaceVariant12"
+                android:fontFamily="@font/montserrat_semi_bold"
+                />
+
+        </FrameLayout>
+
+
+
+        <FrameLayout
+            android:id="@+id/flTechnicalAssistance"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginTop="36dp"
+            android:layout_marginHorizontal="42dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="20dp"
+            android:background="@drawable/shape_technical_assistance_button_background">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/technical_assistance"
+                android:textSize="20sp"
+                android:textColor="?attr/colorOnSurfaceVariant5"
+                android:fontFamily="@font/montserrat_semi_bold"
+                />
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

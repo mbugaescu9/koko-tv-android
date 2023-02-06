@@ -1,0 +1,9 @@
+include ':app'
+include ':library-core'
+    project(':library-core').projectDir = new File('exoplayer/library/core')
+include ':library-hls'
+    project(':library-hls').projectDir = new File('exoplayer/library/hls')
+include ':library-ui'
+    project(':library-ui').projectDir = new File('exoplayer/library/ui')
+include ':extension-ima'
+    project(':extension-ima').projectDir = new File('exoplayer/extensions/ima')

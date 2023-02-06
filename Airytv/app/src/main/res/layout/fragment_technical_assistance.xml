@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorSurfaceVariant13">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="26dp"
+                android:fontFamily="@font/montserrat_semi_bold"
+                android:gravity="center"
+                android:text="@string/before_you_submit"
+                android:textColor="?attr/colorOnSurfaceVariant9"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:id="@+id/llClearCache"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="24dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvTitle">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    app:srcCompat="@drawable/ic_eraser"
+                    app:tint="?attr/colorOnSurfaceVariant5" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="40dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:text="@string/clearing_your_web_cache"
+                        android:textColor="?attr/colorOnSurfaceVariant9"
+                        android:textSize="12sp" />
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_semi_bold"
+                        android:text="@string/web_cache_settings_path"
+                        android:textColor="?attr/colorOnSurfaceVariant9"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llTurningOffOn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="24dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/llClearCache">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    app:srcCompat="@drawable/ic_power"
+                    app:tint="?attr/colorOnSurfaceVariant5" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="40dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:text="@string/turning_off_and_on_your_device"
+                        android:textColor="?attr/colorOnSurfaceVariant9"
+                        android:textSize="12sp" />
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserrat_semi_bold"
+                        android:text="@string/power_button"
+                        android:textColor="?attr/colorOnSurfaceVariant9"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/tvHint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="50dp"
+                android:layout_marginTop="26dp"
+                android:fontFamily="@font/montserrat_semi_bold"
+                android:gravity="center"
+                android:text="@string/please_tell_us_your_issue"
+                android:textColor="?attr/colorOnSurfaceVariant9"
+                android:textSize="15sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/llTurningOffOn" />
+
+            <FrameLayout
+                android:id="@+id/flText"
+                android:layout_width="match_parent"
+                android:layout_height="350dp"
+                android:minHeight="400dp"
+                android:layout_marginHorizontal="40dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="26dp"
+                android:background="@drawable/shape_content_suggestion_text_background"
+                android:paddingHorizontal="4dp"
+                android:paddingVertical="20dp"
+                app:layout_constraintBottom_toTopOf="@id/flSubmit"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvHint">
+
+                <EditText
+                    android:id="@+id/etText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:gravity="start|top"
+                    android:hint="@string/please_tell_us_your_technical_issue_here"
+                    android:inputType="textMultiLine"
+                    android:textColor="?attr/colorOnSurfaceVariant6"
+                    android:textColorHint="?attr/colorOnSurfaceVariant6"
+                    android:textSize="12sp" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/flSubmit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="40dp"
+                android:layout_marginBottom="30dp"
+                android:background="@drawable/shape_content_suggestion_button_background"
+                android:clickable="true"
+                android:focusable="true"
+                android:padding="6dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/montserrat_semi_bold"
+                    android:text="@string/submit"
+                    android:textColor="?attr/colorOnSurfaceVariant12"
+                    android:textSize="20sp" />
+
+            </FrameLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</FrameLayout>

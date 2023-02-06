@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.kokoconnect.android.ui.activity.UserAlertActivity">
+
+    <ImageView
+        android:id="@+id/imageViewBackground"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        app:srcCompat="@color/cast_expanded_controller_ad_break_marker_color" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="3">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2">
+
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/textViewAlertText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="bottom|center_horizontal"
+            android:text="TextView"
+            android:textColor="@android:color/white"
+            android:textSize="24sp" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_weight="2">
+
+            <Button
+                android:id="@+id/buttonOpenLink"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="24dp"
+                android:paddingEnd="24dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textAllCaps="false"
+                android:background="@drawable/shape_button_user_alert"
+                android:text="Button" />
+        </FrameLayout>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageViewButtonClose"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_gravity="end"
+        android:layout_margin="8dp"
+        app:srcCompat="@drawable/ic_close_black_24dp" />
+</FrameLayout>

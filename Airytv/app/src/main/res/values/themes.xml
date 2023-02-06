@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <attr name="themeNumber" format="integer" />
+    <attr name="themeName" format="string" />
+
+    <attr name="guideItemHeight" format="dimension" />
+    <attr name="guideItem30Min" format="dimension" />
+    <attr name="guideChannelTextSize" format="dimension" />
+    <attr name="guideChannelItemWidth" format="dimension" />
+    <attr name="guideChannelNameWidth" format="dimension" />
+    <attr name="guideProgramItemTextSize" format="dimension" />
+    <attr name="guideProgramItemFont" format="reference" />
+    <attr name="guideTimelineHeight" format="dimension" />
+    <attr name="guideTimelineTextHeight" format="dimension" />
+    <attr name="guideTimelinePositionMarkerWidth" format="dimension" />
+    <attr name="guideMargin" format="dimension" />
+    <attr name="guideMarginBetweenPrograms" format="dimension" />
+    <attr name="guideTextPadding" format="dimension" />
+    <attr name="guideDoubleMargin" format="dimension" />
+    <attr name="genreListTextSize" format="dimension" />
+    <attr name="textFontRegular">reference</attr>
+
+    <attr name="colorOnPrimarySurface1" format="color" />
+    <attr name="colorOnPrimarySurface2" format="color" />
+    <attr name="colorOnPrimarySurface3" format="color" />
+    <attr name="colorSecondarySurface" format="color" />
+    <attr name="colorSurfaceVariant1" format="color" />
+    <attr name="colorSurfaceVariant2" format="color" />
+    <attr name="colorSurfaceVariant3" format="color" />
+    <attr name="colorSurfaceVariant4" format="color" />
+    <attr name="colorSurfaceVariant5" format="color" />
+    <attr name="colorSurfaceVariant6" format="color" />
+    <attr name="colorSurfaceVariant7" format="color" />
+    <attr name="colorSurfaceVariant8" format="color" />
+    <attr name="colorSurfaceVariant9" format="color" />
+    <attr name="colorSurfaceVariant10" format="color" />
+    <attr name="colorSurfaceVariant11" format="color" />
+    <attr name="colorSurfaceVariant12" format="color" />
+    <attr name="colorSurfaceVariant13" format="color" />
+    <attr name="colorSurfaceVariant14" format="color" />
+    <attr name="colorSurfaceVariant15" format="color" />
+    <attr name="colorSurfaceVariant16" format="color" />
+    <attr name="colorSurfaceVariant17" format="color" />
+    <attr name="colorSurfaceVariant18" format="color" />
+
+    <attr name="colorOnSecondarySurface" format="color" />
+    <attr name="colorOnSurfaceVariant1" format="color" />
+    <attr name="colorOnSurfaceVariant2" format="color" />
+    <attr name="colorOnSurfaceVariant3" format="color" />
+    <attr name="colorOnSurfaceVariant4" format="color" />
+    <attr name="colorOnSurfaceVariant5" format="color" />
+    <attr name="colorOnSurfaceVariant6" format="color" />
+    <attr name="colorOnSurfaceVariant7" format="color" />
+    <attr name="colorOnSurfaceVariant8" format="color" />
+    <attr name="colorOnSurfaceVariant9" format="color" />
+    <attr name="colorOnSurfaceVariant10" format="color" />
+    <attr name="colorOnSurfaceVariant11" format="color" />
+    <attr name="colorOnSurfaceVariant12" format="color" />
+    <attr name="colorOnSurfaceVariant13" format="color" />
+    <attr name="colorOnSurfaceVariant14" format="color" />
+    <attr name="colorOnSurfaceVariant15" format="color" />
+    <attr name="colorOnSurfaceVariant16" format="color" />
+
+    <!-- New theme  -->
+    <style name="Theme.New" parent="Base.Theme.Airy">
+        <item name="themeName">New</item>
+        <item name="themeNumber">1</item>
+
+        <item name="colorPrimary">@color/athensGray</item>
+        <item name="colorPrimaryVariant">@color/gallery</item>
+        <item name="colorSecondary">@color/white</item>
+        <item name="colorSecondaryVariant">@color/gallery</item>
+        <item name="colorAccent">@color/danube</item>
+
+        <item name="android:colorBackground">@color/white</item>
+        <item name="colorError">@color/pomegranate</item>
+        <item name="colorSurface">@color/white</item>
+        <item name="colorPrimarySurface">@color/gallery</item>
+        <item name="colorSecondarySurface">@color/mineShaft</item>
+        <item name="colorSurfaceVariant1">@color/dustyGray</item>
+        <item name="colorSurfaceVariant2">@color/white</item>
+        <item name="colorSurfaceVariant3">@color/danube</item>
+        <item name="colorSurfaceVariant4">@color/white</item>
+        <item name="colorSurfaceVariant5">@color/athensGray</item>
+        <item name="colorSurfaceVariant6">@color/white</item>
+        <item name="colorSurfaceVariant7">@color/ceruleanBlue</item>
+        <item name="colorSurfaceVariant8">@color/white</item>
+        <item name="colorSurfaceVariant9">@color/gallery</item>
+        <item name="colorSurfaceVariant10">@color/ceruleanBlue</item>
+        <item name="colorSurfaceVariant11">@color/danube</item>
+        <item name="colorSurfaceVariant12">@color/silverChalice</item>
+        <item name="colorSurfaceVariant13">@color/athensGray</item>
+        <item name="colorSurfaceVariant14">@color/yellowSea</item>
+        <item name="colorSurfaceVariant15">@color/mineShaft</item>
+        <item name="colorSurfaceVariant16">@color/ceruleanBlue</item>
+        <item name="colorSurfaceVariant17">@color/kashmirBlue</item>
+        <item name="colorSurfaceVariant18">@color/ceruleanBlue</item>
+
+
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorOnPrimarySurface1">@color/mineShaft</item>
+        <item name="colorOnPrimarySurface2">@color/white</item>
+        <item name="colorOnPrimarySurface3">@color/ceruleanBlue</item>
+        <item name="colorOnSecondary">@color/nobel</item>
+        <item name="colorOnSecondarySurface">@color/white</item>
+        <item name="colorOnError">@color/pomegranate</item>
+        <item name="colorOnBackground">@color/white</item>
+        <item name="colorOnSurface">@color/mineShaft</item>
+        <item name="colorOnSurfaceVariant1">@color/white</item>
+        <item name="colorOnSurfaceVariant2">@color/mineShaft</item>
+        <item name="colorOnSurfaceVariant3">@color/white</item>
+        <item name="colorOnSurfaceVariant4">@color/danube</item>
+        <item name="colorOnSurfaceVariant5">@color/stTropaz</item>
+        <item name="colorOnSurfaceVariant6">@color/mineShaft</item>
+        <item name="colorOnSurfaceVariant7">@color/confetti</item>
+        <item name="colorOnSurfaceVariant8">@color/doveGray</item>
+        <item name="colorOnSurfaceVariant9">@color/mineShaft</item>
+        <item name="colorOnSurfaceVariant10">@color/mineShaft</item>
+        <item name="colorOnSurfaceVariant11">@color/doveGray</item>
+        <item name="colorOnSurfaceVariant12">@color/white</item>
+        <item name="colorOnSurfaceVariant13">@color/doveGray</item>
+        <item name="colorOnSurfaceVariant14">@color/white</item>
+        <item name="colorOnSurfaceVariant15">@color/white</item>
+        <item name="colorOnSurfaceVariant16">@color/scorpion</item>
+
+        <item name="textFontRegular">@font/montserrat_regular</item>
+        <item name="guideChannelItemWidth">110dp</item>
+        <item name="guideChannelNameWidth">74dp</item>
+        <item name="guideChannelTextSize">11sp</item>
+        <item name="guideItem30Min">140dp</item>
+        <item name="guideItemHeight">32dp</item>
+        <item name="guideTextPadding">6dp</item>
+        <item name="guideMargin">0.5dp</item>
+        <item name="guideDoubleMargin">1dp</item>
+        <item name="guideMarginBetweenPrograms">0.5dp</item>
+        <item name="guideProgramItemTextSize">12sp</item>
+        <item name="guideTimelineHeight">25dp</item>
+        <item name="guideTimelineTextHeight">12sp</item>
+        <item name="guideTimelinePositionMarkerWidth">3dp</item>
+        <item name="genreListTextSize">8sp</item>
+    </style>
+
+    <!-- Classic theme  -->
+    <style name="Theme.Classic" parent="Base.Theme.Airy">
+        <item name="themeName">Classic</item>
+        <item name="themeNumber">0</item>
+
+    </style>
+
+    <!-- Splash screen theme  -->
+    <style name="Theme.Launcher"  parent="Base.Theme.Airy">
+        <item name="android:windowBackground">@drawable/splash_screen</item>
+        <item name="colorPrimary">@color/black</item>
+        <item name="colorPrimaryDark">@color/black</item>
+        <item name="colorSecondary">@color/white</item>
+        <item name="colorAccent">@color/creamCan</item>
+    </style>
+
+    <style name="Base.Theme.Airy" parent="Base.Theme.MaterialThemeBuilder">
+        <item name="colorPrimary">@color/black</item>
+        <item name="colorPrimaryVariant">@color/mineShaft</item>
+        <item name="colorSecondary">@color/black</item>
+        <item name="colorSecondaryVariant">@color/mineShaft</item>
+        <item name="colorAccent">@color/corn</item>
+
+        <item name="android:colorBackground">@color/black</item>
+        <item name="colorError">@color/pomegranate</item>
+        <item name="colorSurface">@color/white</item>
+        <item name="colorPrimarySurface">@color/boulder</item>
+        <item name="colorSecondarySurface">@color/tundora</item>
+        <item name="colorSurfaceVariant1">@color/black</item>
+        <item name="colorSurfaceVariant2">@color/black</item>
+        <item name="colorSurfaceVariant3">@color/bigStone</item>
+        <item name="colorSurfaceVariant4">@color/black</item>
+        <item name="colorSurfaceVariant5">@color/mineShaft</item>
+        <item name="colorSurfaceVariant6">@color/mineShaft</item>
+        <item name="colorSurfaceVariant7">@color/creamCan</item>
+        <item name="colorSurfaceVariant8">@color/white</item>
+        <item name="colorSurfaceVariant9">@color/gallery</item>
+        <item name="colorSurfaceVariant10">@color/black</item>
+        <item name="colorSurfaceVariant11">@color/creamCan</item>
+        <item name="colorSurfaceVariant12">@color/black</item>
+        <item name="colorSurfaceVariant13">@color/black</item>
+        <item name="colorSurfaceVariant14">@color/ceruleanBlue</item>
+        <item name="colorSurfaceVariant15">@color/black</item>
+        <item name="colorSurfaceVariant16">@color/white</item>
+        <item name="colorSurfaceVariant17">@color/white</item>
+        <item name="colorSurfaceVariant18">@color/mineShaft</item>
+
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorOnPrimarySurface1">@color/white</item>
+        <item name="colorOnPrimarySurface2">@color/white</item>
+        <item name="colorOnPrimarySurface3">@color/white</item>
+        <item name="colorOnSecondary">@color/nobel</item>
+        <item name="colorOnSecondarySurface">@color/nobel</item>
+        <item name="colorOnError">@color/pomegranate</item>
+        <item name="colorOnBackground">@color/white</item>
+        <item name="colorOnSurface">@color/mineShaft</item>
+        <item name="colorOnSurfaceVariant1">@color/white</item>
+        <item name="colorOnSurfaceVariant2">@color/alto</item>
+        <item name="colorOnSurfaceVariant3">@color/nobel</item>
+        <item name="colorOnSurfaceVariant4">@color/creamCan</item>
+        <item name="colorOnSurfaceVariant5">@color/creamCan</item>
+        <item name="colorOnSurfaceVariant6">@color/mineShaft</item>
+        <item name="colorOnSurfaceVariant7">@color/falcon</item>
+        <item name="colorOnSurfaceVariant8">@color/nobel</item>
+        <item name="colorOnSurfaceVariant9">@color/white</item>
+        <item name="colorOnSurfaceVariant10">@color/creamCan</item>
+        <item name="colorOnSurfaceVariant11">@color/white</item>
+        <item name="colorOnSurfaceVariant12">@color/white</item>
+        <item name="colorOnSurfaceVariant13">@color/doveGray</item>
+        <item name="colorOnSurfaceVariant14">@color/corn</item>
+        <item name="colorOnSurfaceVariant15">@color/mineShaft</item>
+        <item name="colorOnSurfaceVariant16">@color/gray</item>
+
+        <item name="textFontRegular">@font/roboto_condensed_regular</item>
+        <item name="guideChannelItemWidth">95dp</item>
+        <item name="guideChannelNameWidth">63dp</item>
+        <item name="guideChannelTextSize">11.5sp</item>
+        <item name="guideItem30Min">140dp</item>
+        <item name="guideItemHeight">30dp</item>
+        <item name="guideTextPadding">6dp</item>
+        <item name="guideMargin">1.5dp</item>
+        <item name="guideDoubleMargin">3dp</item>
+        <item name="guideMarginBetweenPrograms">4dp</item>
+        <item name="guideProgramItemTextSize">14sp</item>
+        <item name="guideTimelineHeight">30dp</item>
+        <item name="guideTimelineTextHeight">14sp</item>
+        <item name="guideTimelinePositionMarkerWidth">3dp</item>
+        <item name="genreListTextSize">10sp</item>
+        <!--Material color attributes (light theme) -->
+        <!--colorPrimary colors map to components and elements, such as app bars and buttons. -->
+        <!--colorSecondary colors are most often used as accents on components, such as FABs and -->
+        <!--selection controls.-->
+
+        <item name="bottomSheetDialogTheme">@style/BottomSheetDialog.Custom</item>
+    </style>
+
+    <style name="Base.Theme.MaterialThemeBuilder" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:statusBarColor" tools:ignore="NewApi">?attr/colorSurface</item>
+        <item name="android:windowLightStatusBar" tools:ignore="NewApi">true</item>
+        <item name="android:navigationBarColor" tools:ignore="NewApi">
+            ?attr/colorSurface
+        </item>
+        <item name="android:windowLightNavigationBar" tools:ignore="NewApi">true</item>
+        <item name="android:navigationBarDividerColor" tools:ignore="NewApi">
+            ?attr/colorOnSurface
+        </item>
+        <item name="android:windowActivityTransitions">true</item>
+        <item name="android:windowBackground">@color/white</item>
+        <item name="actionBarStyle">@style/MyActionBar</item>
+        <item name="windowActionBar">false</item>
+    </style>
+</resources>

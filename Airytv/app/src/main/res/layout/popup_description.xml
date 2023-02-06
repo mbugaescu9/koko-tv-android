@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?attr/colorSurfaceVariant4"
+        android:fadeScrollbars="false" >
+
+        <LinearLayout
+            android:id="@+id/linearLayoutMoreInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="@dimen/description_content_height"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/textViewProgramDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_description"
+                android:layout_marginEnd="@dimen/margin_description"
+                android:layout_marginBottom="8dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/montserrat_regular"
+                android:maxLines="6"
+                android:textColor="?attr/colorOnSurfaceVariant2"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/textViewSourceName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_description"
+                android:layout_marginEnd="@dimen/margin_description"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/montserrat_regular"
+                android:textColor="@color/gray"
+                android:textStyle="italic"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/textViewProgramDuration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_description"
+                android:layout_marginEnd="@dimen/margin_description"
+                android:fontFamily="@font/montserrat_regular"
+                android:textColor="?attr/colorOnSurfaceVariant2"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>

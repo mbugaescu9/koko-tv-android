@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        app:srcCompat="@drawable/splash"/>
+
+    <com.kokoconnect.android.ui.view.DottedProgressBar
+        android:id="@+id/splashProgress"
+        android:layout_width="100dp"
+        android:layout_height="20dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="140dp"
+        app:maxDots="3"
+        app:activeDot="@drawable/splash_progress_dot_active"
+        app:dotSize="20dp"
+        app:inactiveDot="@drawable/splash_progress_dot"
+        app:jumpingSpeed="500"
+        app:spacing="16dp" />
+</FrameLayout>

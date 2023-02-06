@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/graph_content"
+    app:startDestination="@id/fragmentContentAll">
+
+
+    <fragment
+        android:id="@+id/fragmentContentAll"
+        android:name="com.kokoconnect.android.ui.fragment.vod.ContentAllFragment"
+        android:label="FragmentContentAll"
+        tools:layout="@layout/fragment_content_all">
+
+        <action
+            android:id="@+id/action_fragmentContentAll_to_fragmentContentSeries"
+            app:destination="@id/fragmentContentSeries"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_fragmentContentAll_to_fragmentContentCollection"
+            app:destination="@id/fragmentContentCollection"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_fragmentContentAll_to_fragmentContent"
+            app:destination="@id/fragmentContent"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentContentCollection"
+        android:name="com.kokoconnect.android.ui.fragment.vod.ContentCollectionFragment"
+        android:label="ContentCollectionFragment"
+        tools:layout="@layout/fragment_content_collection">
+
+        <action
+            android:id="@+id/action_fragmentContentCollection_to_fragmentContentSeries"
+            app:destination="@id/fragmentContentSeries"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_fragmentContentCollection_to_fragmentContent"
+            app:destination="@id/fragmentContent"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentContentSeries"
+        android:name="com.kokoconnect.android.ui.fragment.vod.ContentSeriesFragment"
+        android:label="ContentSeriesFragment"
+        tools:layout="@layout/fragment_content_series">
+
+        <action
+            android:id="@+id/action_fragmentContentSeries_to_fragmentContent"
+            app:destination="@id/fragmentContent"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentContent"
+        android:name="com.kokoconnect.android.ui.fragment.vod.ContentFragment"
+        android:label="WebPlayerFragment"
+        tools:layout="@layout/fragment_content">
+
+    </fragment>
+</navigation>

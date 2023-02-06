@@ -1,0 +1,210 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorSurface">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical|end"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/tvAppName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginStart="16dp"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:text="@string/app_name"
+                    android:textAllCaps="true"
+                    android:textColor="?attr/colorOnSurfaceVariant5"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:id="@+id/llBack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="6dp"
+                    android:background="?android:selectableItemBackground"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:id="@+id/ivBack"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        app:srcCompat="@drawable/ic_arrow_left"
+                        app:tint="?attr/colorOnSurfaceVariant5" />
+
+                    <TextView
+                        android:id="@+id/tvBack"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginBottom="2dp"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:text="@string/back"
+                        android:textColor="?attr/colorOnSurfaceVariant5"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+
+                <androidx.mediarouter.app.MediaRouteButton
+                    android:id="@+id/btnMediaRoute"
+                    android:layout_width="36dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="24dp"
+                    android:visibility="invisible"
+                    app:externalRouteEnabledDrawable="@drawable/shape_google_cast"
+                    app:externalRouteEnabledDrawableStatic="@drawable/shape_google_cast_inactive"
+                    app:mediaRouteButtonTint="?attr/colorOnSurfaceVariant5" />
+            </RelativeLayout>
+        </FrameLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?attr/colorSurfaceVariant10">
+
+        <LinearLayout
+            android:id="@+id/flTicketsCount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/shape_gift_card_background"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:fontFamily="@font/montserrat_regular"
+                android:gravity="center_horizontal"
+                android:includeFontPadding="false"
+                android:text="@string/available_tickets"
+                android:textColor="?attr/colorOnSurfaceVariant6"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tvAvailableTicketsCount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="6dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:gravity="center_horizontal"
+                android:includeFontPadding="false"
+                android:text="0"
+                android:textColor="?attr/colorOnSurfaceVariant4"
+                android:textSize="24sp" />
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toTopOf="@id/flGetMoreTickets"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/flTicketsCount">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvGiveaways"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:listitem="@layout/item_giveaways_card" />
+
+            <FrameLayout
+                android:id="@+id/flEmptyMessage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/tvEmptyMessage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:text="@string/no_available_gifts"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:visibility="visible" />
+
+            </FrameLayout>
+
+            <include
+                android:id="@+id/errorMessage"
+                layout="@layout/include_error_message"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/flGetMoreTickets"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/shape_get_more_tickets_background"
+            android:backgroundTint="?attr/colorSurfaceVariant11"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:padding="4dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:id="@+id/tvGetMoreTickets"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_regular"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text="@string/get_more_tickets"
+                android:textColor="?attr/colorOnSurfaceVariant12"
+                android:textSize="24sp" />
+        </FrameLayout>
+
+        <include
+            android:id="@+id/lockUi"
+            layout="@layout/include_lock_ui"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black_40">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="120dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_gravity="top"
+        android:orientation="vertical"
+        android:paddingStart="24dp"
+        android:paddingTop="24dp"
+        android:paddingEnd="24dp"
+        android:paddingBottom="16dp"
+        android:background="?attr/colorSurfaceVariant9">
+
+        <TextView
+            android:id="@+id/giveawaysInfoText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|end"
+            android:gravity="center"
+            android:text=""
+            android:textColor="?attr/colorOnSurfaceVariant13"
+            android:textSize="19sp" />
+
+
+        <Button
+            android:id="@+id/buttonContinue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="32dp"
+            android:backgroundTint="?attr/colorSurfaceVariant7"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:text="@string/giveaways_info_dialog_button"
+            android:textColor="?attr/colorOnSurfaceVariant12"
+            android:textAllCaps="true"
+            android:textSize="20sp"
+            android:textStyle="normal" />
+
+    </LinearLayout>
+
+</FrameLayout>

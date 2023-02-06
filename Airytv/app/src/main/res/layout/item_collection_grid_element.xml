@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center">
+
+    <ImageView
+        android:id="@+id/ivMoviePoster"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/shape_poster_vertical_placeholder"/>
+
+
+    <TextView
+        android:id="@+id/tvPosterSource"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@color/black_70"
+        android:gravity="end"
+        android:ellipsize="start"
+        android:singleLine="true"
+        android:paddingStart="2dp"
+        android:paddingEnd="2dp"
+        android:text=""
+        android:textColor="@color/gray"
+        android:textSize="8sp" />
+
+</FrameLayout>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView
+    android:id="@android:id/text1"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="30dp"
+    android:includeFontPadding="false"
+    android:fontFamily="@font/roboto_regular"
+    android:textSize="?attr/genreListTextSize"
+    android:textColor="#d9d9d9"
+    android:textAppearance="?android:attr/textAppearanceListItemSmall"
+    android:gravity="center_vertical"
+    android:singleLine="true"
+    android:minHeight="?android:attr/listPreferredItemHeightSmall" />
+<!--    android:paddingLeft="5dip"-->
+<!--    android:paddingRight="5dip"-->

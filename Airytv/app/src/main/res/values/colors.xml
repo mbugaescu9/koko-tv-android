@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorPrimary">@color/black</color>
+    <color name="colorPrimaryDark">@color/black</color>
+    <color name="colorAccent">@color/corn</color>
+
+    <color name="black">#000</color>
+    <color name="black_90">#E6000000</color>
+    <color name="black_80">#CC000000</color>
+    <color name="black_70">#B3000000</color>
+    <color name="black_50">#80000000</color>
+    <color name="black_40">#66000000</color>
+    <color name="black_20">#34000000</color>
+
+    <color name="mineShaft">#2b2b2b</color>
+    <color name="tundora">#404040</color>
+    <color name="scorpion">#606060</color>
+    <color name="doveGray">#6c6c6c</color>
+    <color name="boulder">#767676</color>
+    <color name="gray">#7f7f7f</color>
+    <color name="dustyGray">#949494</color>
+    <color name="silverChalice">#a6a6a6</color>
+    <color name="nobel">#b4b4b4</color>
+    <color name="silver">#bfbfbf</color>
+    <color name="alto">#d9d9d9</color>
+    <color name="athensGray">#EAEBF3</color>
+    <color name="gallery">#ececec</color>
+    <color name="gallery_55">#8CECECEC</color>
+    <color name="white">#fff</color>
+
+    <color name="corn">#EAB200</color>
+    <color name="yellowSea">#FFAE00</color>
+    <color name="creamCan">#F7C65C</color>
+    <color name="rajah">#F5BD6F</color>
+    <color name="confetti">#E3E54D</color>
+    <color name="conifer">#92d050</color>
+    <color name="pastelGreen">#7adb61</color>
+    <color name="greenHaze">#08A547</color>
+    <color name="bigStone">#101c32</color>
+    <color name="ceruleanBlue">#2552a6</color>
+    <color name="stTropaz">#2A52A4</color>
+    <color name="kashmirBlue">#475993</color>
+    <color name="pictonBlue">#46B8E4</color>
+    <color name="danube">#6aa7ce</color>
+    <color name="falcon">#826675</color>
+    <color name="pomegranate">#f44336</color>
+    <color name="tamarillo">#A21212</color>
+    <color name="red">#ff0000</color>
+
+</resources>

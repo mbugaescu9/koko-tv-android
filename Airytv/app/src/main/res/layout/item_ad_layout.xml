@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<net.cachapa.expandablelayout.ExpandableLayout android:id="@+id/expandableLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:el_duration="1000"
+    app:el_expanded="true"
+    app:el_parallax="0.5"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <FrameLayout
+        android:id="@+id/adView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+</net.cachapa.expandablelayout.ExpandableLayout>
